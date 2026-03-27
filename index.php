@@ -12,6 +12,7 @@ include_once 'functions.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Index.css">
     <title>Webshop games</title>
 </head>
 <nav>
@@ -24,6 +25,11 @@ include_once 'functions.php';
     </ul>
 </nav>
 <body>
-    
+
+
+
+
+
+<footer>Contact Information</footer>
 </body>
 </html>
