@@ -1,1 +1,38 @@
-@import url(_variables.scss);
+// Initialisatie
+@import 'variables.scss';
+
+// Global
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+    background-color: $x-navBg;
+    nav{
+        ul{
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            list-style: none;
+            li a{
+                text-decoration: none;
+                font-size: 35px;
+                color: $font-color;
+                font-weight: $nav-font-weight;
+            }
+        }
+    }
+    .logo{
+        width: $nav-img-width;
+        justify-self: start;
+    }
+
+    .winkelmandje-img{
+        width: $nav-img-width;
+        justify-self: end;
+    }
+}
