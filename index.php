@@ -15,7 +15,7 @@ include_once 'functions.php';
     <title>Home</title>
     <link rel="stylesheet" href="scss/main.css">
 </head>
-<body>
+<body class="home-page">
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>

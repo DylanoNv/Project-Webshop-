@@ -6,48 +6,46 @@
 body.xbox-page {
   background-color: #121212;
 }
-
-header {
+body.xbox-page header {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   align-items: center;
   background-color: #004500;
 }
-header nav ul {
+body.xbox-page header nav ul {
   display: flex;
   justify-content: center;
   gap: 100px;
   list-style: none;
 }
-header nav ul li a {
+body.xbox-page header nav ul li a {
   text-decoration: none;
   font-size: 35px;
   color: #E0E0E0;
   font-weight: 500;
 }
-header nav ul li a.selected-page {
+body.xbox-page header nav ul li a.selected-page {
   font-weight: 900;
   text-shadow: 2px 2px 20px #00FF00;
 }
-header .logo {
+body.xbox-page header .logo {
   width: 100px;
   justify-self: start;
 }
-header .winkelmandje-img {
+body.xbox-page header .winkelmandje-img {
   width: 100px;
   justify-self: end;
 }
-
-main {
+body.xbox-page main {
   padding: 40px 5%;
 }
-main section.product-container {
+body.xbox-page main section.product-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   justify-items: center;
 }
-main section.product-container article.game-card {
+body.xbox-page main section.product-container article.game-card {
   text-align: center;
   background-color: #004500;
   color: #E0E0E0;
@@ -60,24 +58,24 @@ main section.product-container article.game-card {
   display: flex;
   flex-direction: column;
 }
-main section.product-container article.game-card:hover {
+body.xbox-page main section.product-container article.game-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 255, 0, 0.3);
 }
-main section.product-container article.game-card .game-info {
+body.xbox-page main section.product-container article.game-card .game-info {
   padding: 20px;
   text-align: center;
 }
-main section.product-container article.game-card .game-info h3 {
+body.xbox-page main section.product-container article.game-card .game-info h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
-main section.product-container article.game-card .game-info p.price {
+body.xbox-page main section.product-container article.game-card .game-info p.price {
   font-weight: bold;
   color: #00FF00;
   font-size: 1.2rem;
 }
-main section.product-container img.game-img {
+body.xbox-page main section.product-container img.game-img {
   width: 100%;
   height: 250px;
   object-fit: cover;
