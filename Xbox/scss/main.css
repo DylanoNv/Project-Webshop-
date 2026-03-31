@@ -29,3 +29,6 @@ header .winkelmandje-img {
   width: 100px;
   justify-self: end;
 }
+header #selected-page {
+  color: black;
+}

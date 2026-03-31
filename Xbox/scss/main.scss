@@ -11,7 +11,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     align-items: center;
-    background-color: $x-navBg;
+    background-color: $header-bg;
     nav{
         ul{
             display: flex;
@@ -27,12 +27,16 @@ header{
         }
     }
     .logo{
-        width: $nav-img-width;
+        width: $nav-img-size;
         justify-self: start;
     }
 
     .winkelmandje-img{
-        width: $nav-img-width;
+        width: $nav-img-size;
         justify-self: end;
     }
+
+    #selected-page{
+                color: black;
+            }
 }

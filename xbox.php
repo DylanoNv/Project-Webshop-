@@ -15,7 +15,7 @@ include_once 'functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xbox Producten</title>
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="Xbox/scss/main.css">
 </head>
 <body class="xbox-page">
     <header>
@@ -25,7 +25,7 @@ include_once 'functions.php';
                 <li><a href="index.php">Home</a></li>
                 <li><a href="playstation.php">Playstation</a></li>
                 <li><a href="pc.php">PC</a></li>
-                <li><a href="Xbox/xbox.php">Xbox</a></li>
+                <li id="selected-page"><a href="#">Xbox</a></li>
                 <li><a href="nintendo.php">Nintendo</a></li>
             </ul>
         </nav>
