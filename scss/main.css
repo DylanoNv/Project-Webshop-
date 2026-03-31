@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+  background-color: #004500;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  font-size: 35px;
+  color: #E0E0E0;
+  font-weight: 550;
+}
+header .logo {
+  width: 100px;
+  justify-self: start;
+}
+header .winkelmandje-img {
+  width: 100px;
+  justify-self: end;
+}
