@@ -17,7 +17,7 @@ include_once 'functions.php';
     <title>Xbox Producten</title>
     <link rel="stylesheet" href="scss/main.css">
 </head>
-<body>
+<body class="xbox-page">
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>
@@ -25,7 +25,7 @@ include_once 'functions.php';
                 <li><a href="index.php">Home</a></li>
                 <li><a href="playstation.php">Playstation</a></li>
                 <li><a href="pc.php">PC</a></li>
-                <li><a href="xbox.php">Xbox</a></li>
+                <li><a href="Xbox/xbox.php">Xbox</a></li>
                 <li><a href="nintendo.php">Nintendo</a></li>
             </ul>
         </nav>
