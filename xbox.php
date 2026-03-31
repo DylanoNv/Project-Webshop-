@@ -6,7 +6,7 @@
 include_once 'functions.php';
 
 // Main
-
+$games = getData(GAMETABLE, "*", ['categorie_id' => 3]);
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,9 @@ include_once 'functions.php';
     </header>
 
     <main>
-        
+        <?php
+        showProducts($games);
+        ?>
     </main>
 
     <footer>

@@ -37,3 +37,10 @@ header .winkelmandje-img {
   width: 100px;
   justify-self: end;
 }
+
+main section.product-container {
+  background-color: #004500;
+  margin-top: 100px;
+  color: #E0E0E0;
+  width: 100px;
+}
