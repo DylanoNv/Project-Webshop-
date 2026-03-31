@@ -15,7 +15,7 @@ $games = getData(GAMETABLE, "*", ['categorie_id' => 3]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xbox Producten</title>
-    <link rel="stylesheet" href="Xbox/scss/main.css">
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 <body class="xbox-page">
     <header>
