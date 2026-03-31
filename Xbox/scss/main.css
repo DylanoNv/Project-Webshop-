@@ -39,8 +39,19 @@ header .winkelmandje-img {
 }
 
 main section.product-container {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+main section.product-container article.game-card {
   background-color: #004500;
   margin-top: 100px;
   color: #E0E0E0;
-  width: 100px;
+  width: 420px;
+  height: fit-content;
+  box-shadow: 4px 4px 10px #00FF00;
+}
+main section.product-container img.game-img {
+  background-color: #004500;
+  padding: 10px;
 }
