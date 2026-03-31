@@ -56,7 +56,27 @@ function getData($table, $selection = "*", $conditions = [], $orderBy = null) {
     // SQL-Querie uitvoeren
     $stmt->execute($params);
 
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     // Resultaten teruggeven
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $data;
+}
+
+// Producten laten zien
+function showProducts($data) {
+    if (empty($data)) {
+        echo "<p>Geen producten gevonden voor deze console.</p>";
+        return;
+    }
+
+    echo "<section class='product-container'>";
+    foreach ($data as $game) {
+        echo "<article class='game-card'>";
+        echo "<h3>" . htmlspecialchars($game['naam']) . "</h3>";
+        echo "<p>Prijs: €" . number_format($game['prijs'], 2, ',', '.') . "</p>";
+        // Voeg eventueel meer velden toe zoals beschrijving of afbeeldingen
+        echo "</article>";
+    }
+    echo "</section>";
 }
 ?>

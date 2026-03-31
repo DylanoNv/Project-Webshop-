@@ -25,7 +25,7 @@ include_once 'functions.php';
                 <li><a href="index.php">Home</a></li>
                 <li><a href="playstation.php">Playstation</a></li>
                 <li><a href="pc.php">PC</a></li>
-                <li id="selected-page"><a href="#">Xbox</a></li>
+                <li><a class="selected-page" href="#">Xbox</a></li>
                 <li><a href="nintendo.php">Nintendo</a></li>
             </ul>
         </nav>
@@ -33,7 +33,7 @@ include_once 'functions.php';
     </header>
 
     <main>
-
+        
     </main>
 
     <footer>

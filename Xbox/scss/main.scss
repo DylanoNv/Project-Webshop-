@@ -7,6 +7,9 @@
     padding: 0;
 }
 
+body{
+    background-color: $bg-color;
+}
 header{
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
@@ -18,16 +21,22 @@ header{
             justify-content: center;
             gap: 100px;
             list-style: none;
-            li a{
-                text-decoration: none;
-                font-size: 35px;
-                color: $font-color;
-                font-weight: $nav-font-weight;
+            li{
+                a{
+                    text-decoration: none;
+                    font-size: 35px;
+                    color: $font-color;
+                    font-weight: 500;
+                }
+                a.selected-page{
+                    font-weight: 900;
+                    text-shadow: 2px 2px 20px #00FF00;
+                }
             }
         }
     }
     .logo{
-        width: $nav-img-size;
+        width: $nav-img-size ;
         justify-self: start;
     }
 
@@ -35,8 +44,4 @@ header{
         width: $nav-img-size;
         justify-self: end;
     }
-
-    #selected-page{
-                color: black;
-            }
 }

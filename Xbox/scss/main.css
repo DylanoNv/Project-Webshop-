@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #121212;
+}
+
 header {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
@@ -19,7 +23,11 @@ header nav ul li a {
   text-decoration: none;
   font-size: 35px;
   color: #E0E0E0;
-  font-weight: 550;
+  font-weight: 500;
+}
+header nav ul li a.selected-page {
+  font-weight: 900;
+  text-shadow: 2px 2px 20px #00FF00;
 }
 header .logo {
   width: 100px;
@@ -28,7 +36,4 @@ header .logo {
 header .winkelmandje-img {
   width: 100px;
   justify-self: end;
-}
-header #selected-page {
-  color: black;
 }
