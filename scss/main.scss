@@ -34,12 +34,12 @@ body.pc-page{
 
 // Xbox pagina
 body.xbox-page{
-    background-color: $bg-color;
+    background-color: $x-bg-color;
     header{
         display: grid;
         grid-template-columns: 1fr 5fr 1fr;
         align-items: center;
-        background-color: $header-bg;
+        background-color: $x-header-bg;
         nav{
             ul{
                 display: flex;
@@ -50,7 +50,7 @@ body.xbox-page{
                     a{
                         text-decoration: none;
                         font-size: 35px;
-                        color: $font-color;
+                        color: $x-font-color;
                         font-weight: 500;
                     }
                     a.selected-page{
@@ -61,18 +61,18 @@ body.xbox-page{
             }
         }
         .logo{
-            width: $nav-img-size ;
+            width: $x-nav-img-size ;
             justify-self: start;
         }
 
         .winkelmandje-img{
-            width: $nav-img-size;
+            width: $x-nav-img-size;
             justify-self: end;
         }
     }
 
     main {
-        padding: 40px 5%; // Geeft wat ademruimte aan de zijkanten
+        padding: 40px 5%;
 
         section.product-container {
             display: grid;
@@ -83,12 +83,12 @@ body.xbox-page{
             article.game-card {
                 text-align: center;
                 background-color: #004500;
-                color: $font-color;
+                color: $x-font-color;
                 width: 100%;
                 max-width: 420px;
                 border-radius: 10px;
                 overflow: hidden;
-                box-shadow: $product-card-shadow;
+                box-shadow: $x-product-card-shadow;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 display: flex;
                 flex-direction: column;
@@ -120,6 +120,31 @@ body.xbox-page{
                 height: 250px;
                 object-fit: cover;
                 display: block;
+            }
+        }
+        section.game-modal{
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $x-bg-color;
+
+            section.modal-content{
+                background-color: #004500;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #00FF00;
+                width: 40%;
+                color: white;
+                span{
+                    float: right;
+                    cursor: pointer;
+                    font-size: 28px;
+                    
+                }
             }
         }
     }

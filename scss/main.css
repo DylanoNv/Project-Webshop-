@@ -81,3 +81,26 @@ body.xbox-page main section.product-container img.game-img {
   object-fit: cover;
   display: block;
 }
+body.xbox-page main section.game-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+}
+body.xbox-page main section.game-modal section.modal-content {
+  background-color: #004500;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #00FF00;
+  width: 40%;
+  color: white;
+}
+body.xbox-page main section.game-modal section.modal-content span {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}

@@ -71,7 +71,7 @@ function showProducts($data) {
 
     echo "<section class='product-container'>";
     foreach ($data as $game) {
-        echo "<article class='game-card'>";
+        echo "<article class='game-card' onclick=\"openModal('" . htmlspecialchars($game['naam']) . "', '" . $game['prijs'] . "')\">";
         echo "<img class='game-img' src='img/games/" . htmlspecialchars($game['foto']) . "'>";
         echo "<h3>" . htmlspecialchars($game['naam']) . "</h3>";
         echo "<p>Prijs: €" . number_format($game['prijs'], 2, ',', '.') . "</p>";

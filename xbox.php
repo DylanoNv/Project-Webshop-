@@ -36,10 +36,30 @@ $games = getData(GAMETABLE, "*", ['categorie_id' => 3]);
         <?php
         showProducts($games);
         ?>
+
+        <section id="gameModal" class="game-modal">
+            <section class="modal-content">
+                <span>&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalPrice"></p>
+                <button>Voeg toe aan winkelmandje</button>
+            </section>
+        </section>
     </main>
 
     <footer>
 
     </footer>
+
+    <script>
+        function openModal(naam, prijs){
+            document.getElementById('modalTitle').innerText = naam;
+            document.getElementById('modalPrice').innerText = "Prijs: €" + prijs;
+            document.getElementById('gameModal').style.display = 'block';
+        }
+        function closeModal(){
+            document.getElementById('gameModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
