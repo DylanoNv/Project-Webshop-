@@ -39,6 +39,29 @@ body.xbox-page header .winkelmandje-img {
 body.xbox-page main {
   padding: 40px 5%;
 }
+body.xbox-page main section.search-bar section.filter-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  width: fit-content;
+}
+body.xbox-page main section.search-bar section.filter-icon span.bar {
+  height: 12px;
+  background-color: #004500;
+  border-radius: 10px;
+  box-shadow: 0 0 15 rgba(0, 77, 0, 0.6);
+}
+body.xbox-page main section.search-bar section.filter-icon span.long {
+  width: 100px;
+}
+body.xbox-page main section.search-bar section.filter-icon span.medium {
+  width: 70px;
+}
+body.xbox-page main section.search-bar section.filter-icon span.short {
+  width: 40px;
+}
 body.xbox-page main section.product-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -73,6 +73,37 @@ body.xbox-page{
 
     main {
         padding: 40px 5%;
+        
+        section.search-bar{
+            section.filter-icon{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;            
+                padding: 20px;
+                // background-color: #121212;
+                width: fit-content;
+
+                span.bar{
+                    height: 12px;
+                    background-color: #004500;
+                    border-radius: 10px;
+                    box-shadow: 0 0 15 rgba(0, 77, 0, 0.6);
+                }
+
+                span.long{
+                    width: 100px;
+                }
+
+                span.medium{
+                    width: 70px;
+                }
+                
+                span.short{
+                    width: 40px;
+                }
+            }
+        }
 
         section.product-container {
             display: grid;
@@ -122,6 +153,7 @@ body.xbox-page{
                 display: block;
             }
         }
+
         section.game-modal{
             display: none;
             position: fixed;

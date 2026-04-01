@@ -33,6 +33,16 @@ $products = getData("products", "*", ['console_id' => 3]);
     </header>
 
     <main>
+        <section class="search-bar">
+            <input type="text">
+            <section class="filter-icon">
+                <span class="bar long"></span>
+                <span class="bar medium"></span>
+                <span class="bar short"></span>
+            </section>
+            <button>Zoeken</button>
+        </section>
+
         <?php
         showProducts($products);
         ?>
