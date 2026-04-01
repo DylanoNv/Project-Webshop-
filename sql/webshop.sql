@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 01, 2026 at 10:05 AM
+-- Generation Time: Apr 01, 2026 at 10:21 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.30
 
@@ -46,6 +46,13 @@ CREATE TABLE `categories` (
   `age_rating` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `age_rating`) VALUES
+(1, 'test', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -56,6 +63,16 @@ CREATE TABLE `consoles` (
   `id` int NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `consoles`
+--
+
+INSERT INTO `consoles` (`id`, `name`) VALUES
+(1, 'Playstation'),
+(2, 'PC'),
+(3, 'Xbox'),
+(4, 'Nintendo');
 
 -- --------------------------------------------------------
 
@@ -68,9 +85,19 @@ CREATE TABLE `products` (
   `name` varchar(100) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `console_id` int NOT NULL,
+  `foto` varchar(50) NOT NULL,
   `categorie_id` int NOT NULL,
   `stock` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `console_id`, `foto`, `categorie_id`, `stock`) VALUES
+(2, 'Call of Duty: Black Ops 6', 80.00, 3, 'call_of_duty_bo6.jpg', 1, 10),
+(3, 'Minecraft', 50.00, 3, 'minecraft.jpg', 1, 10),
+(4, 'Call of Duty: Warzone', 20.00, 3, 'call_of_duty_warzone.jpg', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -183,19 +210,19 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `consoles`
 --
 ALTER TABLE `consoles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `reviews`

@@ -53,8 +53,8 @@ $products = getData("products", "*", ['console_id' => 3]);
 
     <script>
         function openModal(name, price){
-            document.getElementById('modalTitle').innerText = naam;
-            document.getElementById('modalPrice').innerText = "Prijs: €" + prijs;
+            document.getElementById('modalTitle').innerText = name;
+            document.getElementById('modalPrice').innerText = "Prijs: €" + price;
             document.getElementById('gameModal').style.display = 'block';
         }
         function closeModal(){
