@@ -6,7 +6,7 @@
 include_once 'functions.php';
 
 // Main
-$games = getData(GAMETABLE, "*", ['categorie_id' => 3]);
+$products = getData("products", "*", ['console_id' => 3]);
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $games = getData(GAMETABLE, "*", ['categorie_id' => 3]);
 
     <main>
         <?php
-        showProducts($games);
+        showProducts($products);
         ?>
 
         <section id="gameModal" class="game-modal">
@@ -52,7 +52,7 @@ $games = getData(GAMETABLE, "*", ['categorie_id' => 3]);
     </footer>
 
     <script>
-        function openModal(naam, prijs){
+        function openModal(name, price){
             document.getElementById('modalTitle').innerText = naam;
             document.getElementById('modalPrice').innerText = "Prijs: €" + prijs;
             document.getElementById('gameModal').style.display = 'block';
