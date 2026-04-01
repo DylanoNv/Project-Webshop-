@@ -39,7 +39,7 @@ $games = getData(GAMETABLE, "*", ['categorie_id' => 3]);
 
         <section id="gameModal" class="game-modal">
             <section class="modal-content">
-                <span>&times;</span>
+                <span onclick="closeModal()">&times;</span>
                 <h2 id="modalTitle"></h2>
                 <p id="modalPrice"></p>
                 <button>Voeg toe aan winkelmandje</button>
