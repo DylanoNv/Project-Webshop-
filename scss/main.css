@@ -184,3 +184,37 @@ body.xbox-page main section.game-modal section.modal-content span {
   cursor: pointer;
   font-size: 28px;
 }
+body.xbox-page main section.game-modal section.modal-content img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00FF00;
+}
+body.xbox-page main section.game-modal section.modal-content button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #013e01;
+  color: #00FF00;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5529411765);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 308px;
+}
+body.xbox-page main section.game-modal section.modal-content button img {
+  width: 24px;
+  height: auto;
+  object-fit: contain;
+  box-shadow: none;
+  border-radius: 0px;
+}
+body.xbox-page main section.game-modal section.modal-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 30px rgba(0, 255, 0, 0.3);
+}

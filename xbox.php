@@ -55,7 +55,14 @@ $products = getData("products", "*", ['console_id' => 3]);
                 <img id=modalImg src="" alt="Game afbeelding">
                 <h2 id="modalTitle"></h2>
                 <p id="modalPrice"></p>
-                <button>Voeg toe aan winkelmandje</button>
+                <button class="winkelmand-btn">
+                    Voeg toe aan winkelmandje
+                    <img src="img/Add-to-cart.png" alt="Winkelmandje">
+                </button>
+                <button class="wishlist-btn">
+                    Voeg toe aan wishlist
+                    <img src="img/Add_to_wishlist.png" alt="Wishlist">
+                </button>
             </section>
         </section>
     </main>
