@@ -52,6 +52,12 @@ body.xbox-page{
                         font-size: 35px;
                         color: $x-font-color;
                         font-weight: 500;
+                        transition: transform 0.3s ease, text-shadow 0.3s ease;
+
+                        &:hover{
+                            transform: translateY(-2px);
+                            text-shadow: 0 0 15px #00FF00;
+                        }
                     }
                     a.selected-page{
                         font-weight: 900;
@@ -77,36 +83,85 @@ body.xbox-page{
         section.search-bar{
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 70px;
+
+            input {
+                padding: 10px 12px;
+                border-radius: 6px;
+                border: 1px solid #00ff008d;
+                background: #004500;
+                color: white;
+                min-width: 220px;
+                box-shadow: 0 0 5px #00FF00;
+                width: 600px;
+                height: 20px;
+                outline: none;
+                font-size: 20px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:focus{
+                    border-color: #00FF008d;
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 30px #00FF00;
+                }
+            }
+
+            button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 6px;
+                background-color: #004500;
+                color: #00FF00;
+                font-weight: 700;
+                font-size: 18px;
+                cursor: pointer;
+                box-shadow: 0 0 5px #00FF008d;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover{
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 30px rgba(0, 255, 0, 0.3);
+                }
+            }
 
             section.filter-icon{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 8px;            
-                padding: 20px;
-                background-color: #00ff00;
+                gap: 5px;            
+                padding: 10px;
+                border-radius: 8px;
+                background-color: #004500;
                 width: fit-content;
+                cursor: pointer;
+                box-shadow: 0 0 10px #00FF00;
+                transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+                }
 
                 span.bar{
                     display: block;
                     height: 6px;
-                    background-color: #004500;
+                    background-color: #00FF00;
                     border-radius: 10px;
-                    box-shadow: 0 0 10px rgba(0, 77, 0, 0.6);
+                    box-shadow: 0 0 7px #00FF00;
                 }
 
                 span.long{
-                    width: 40px;
+                    width: 37px;
                 }
 
                 span.medium{
-                    width: 30px;
+                    width: 27px;
                 }
                 
                 span.short{
-                    width: 20px;
+                    width: 17px;
                 }
             }
         }

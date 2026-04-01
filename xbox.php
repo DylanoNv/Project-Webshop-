@@ -35,17 +35,19 @@ $products = getData("products", "*", ['console_id' => 3]);
     <main>
         <section class="search-bar">
             <input type="text">
-            <section class="filter-icon">
-                <span class="bar long"></span>
-                <span class="bar medium"></span>
-                <span class="bar short"></span>
+            <section class="filter-wrapper">
+                <section class="filter-icon">
+                    <span class="bar long"></span>
+                    <span class="bar medium"></span>
+                    <span class="bar short"></span>
+                </section>
             </section>
             <button>Zoeken</button>
         </section>
 
-        <!-- <?php
+        <?php
         showProducts($products);
-        ?> -->
+        ?>
 
         <section id="gameModal" class="game-modal">
             <section class="modal-content">
