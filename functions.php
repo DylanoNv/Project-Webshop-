@@ -70,11 +70,15 @@ function showProducts($data) {
     }
 
     echo "<section class='product-container'>";
-    foreach ($data as $game) {
-        echo "<article class='game-card' onclick=\"openModal('" . htmlspecialchars($game['name']) . "', '" . $game['price'] . "')\">";
-        echo "<img class='game-img' src='img/games/" . htmlspecialchars($game['foto']) . "'>";
-        echo "<h3>" . htmlspecialchars($game['name']) . "</h3>";
-        echo "<p>Prijs: €" . number_format($game['price'], 2, ',', '.') . "</p>";
+    foreach ($data as $product) {
+        // HIER GEBEURT HET: We voegen het pad naar de foto toe als 3e parameter
+        $fotoPad = "img/games/" . htmlspecialchars($product['foto']);
+        
+        echo "<article class='game-card' onclick=\"openModal('" . htmlspecialchars($product['name']) . "', '" . $product['price'] . "', '" . $fotoPad . "')\">";
+        
+        echo "<img class='game-img' src='" . $fotoPad . "'>";
+        echo "<h3>" . htmlspecialchars($product['name']) . "</h3>";
+        echo "<p>Prijs: €" . number_format($product['price'], 2, ',', '.') . "</p>";
         echo "</article>";
     }
     echo "</section>";

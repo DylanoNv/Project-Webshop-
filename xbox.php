@@ -40,6 +40,7 @@ $products = getData("products", "*", ['console_id' => 3]);
         <section id="gameModal" class="game-modal">
             <section class="modal-content">
                 <span onclick="closeModal()">&times;</span>
+                <img id=modalImg src="" alt="Game afbeelding">
                 <h2 id="modalTitle"></h2>
                 <p id="modalPrice"></p>
                 <button>Voeg toe aan winkelmandje</button>
@@ -52,13 +53,18 @@ $products = getData("products", "*", ['console_id' => 3]);
     </footer>
 
     <script>
-        function openModal(name, price){
+        function openModal(name, price, imgSrc){
+            const modalImageElement = document.getElementById('modalImg');
+            modalImageElement.src = imgSrc;
+            modalImageElement.alt = "Afbeelding van " + name;
+
             document.getElementById('modalTitle').innerText = name;
             document.getElementById('modalPrice').innerText = "Prijs: €" + price;
             document.getElementById('gameModal').style.display = 'block';
         }
         function closeModal(){
             document.getElementById('gameModal').style.display = 'none';
+            document.getElementById('modalImg').src = "";
         }
     </script>
 </body>
