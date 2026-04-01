@@ -43,9 +43,9 @@ $products = getData("products", "*", ['console_id' => 3]);
             <button>Zoeken</button>
         </section>
 
-        <?php
+        <!-- <?php
         showProducts($products);
-        ?>
+        ?> -->
 
         <section id="gameModal" class="game-modal">
             <section class="modal-content">
