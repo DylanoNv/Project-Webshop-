@@ -108,6 +108,48 @@ body.xbox-page{
                 }
             }
 
+            section.filter-wrapper{
+                position: relative;
+                display: inline-block;
+
+                &:hover{
+                    section.filter-content {
+                        display: block;
+                    }
+                }
+            }
+
+            section.filter-content{
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 40px;
+                background-color: #004500;
+                min-width: 200px;
+                box-shadow: 0 8px 16px #00FF00;
+                padding: 15px;
+                z-index: 99;
+                border-radius: 5px;
+
+                h4{
+                    margin: 0 0 10px 0;
+                    color: #00FF00;
+                    font-size: 14px;
+                }
+
+                label{
+                    display: block;
+                    color: #00FF00;
+                    font-size: 13px;
+                    margin-bottom: 8px;
+                    cursor: pointer;
+
+                    input{
+                        width: fit-content;
+                    }
+                }
+            }
+
             button {
                 padding: 10px 20px;
                 border: none;
@@ -138,7 +180,7 @@ body.xbox-page{
                 cursor: pointer;
                 box-shadow: 0 0 10px #00FF00;
                 transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 02s ease;
-                
+
                 &:hover {
                     transform: translateY(-3px);
                     box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);

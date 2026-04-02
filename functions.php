@@ -64,11 +64,13 @@ function getData($table, $selection = "*", $conditions = [], $orderBy = null) {
 
 // Producten laten zien
 function showProducts($data) {
+    // Controleren of er data is gevonden
     if (empty($data)) {
         echo "<p>Geen producten gevonden voor deze console.</p>";
         return;
     }
 
+    // Als er data is gevonden dan wordt dat getoont
     echo "<section class='product-container'>";
     foreach ($data as $product) {
         // HIER GEBEURT HET: We voegen het pad naar de foto toe als 3e parameter
@@ -82,5 +84,39 @@ function showProducts($data) {
         echo "</article>";
     }
     echo "</section>";
+}
+
+// Producten zoeken
+function searchProducts($searchInp, $data){
+    // Als er geen data is wordt er niet gezocht
+    if(empty($data) || empty($searchInp)){
+        return $data;
+    }
+
+    $filteredData = [];
+    foreach ($data as $product) {
+        if(str_contains(strtolower($product['name']), strtolower($searchInp))){
+            $filteredData[] = $product;
+        }
+    }
+    return $filteredData;
+}
+
+// Producten filteren op prijs
+function sortProductsByPrice($data, $type) {
+    if (empty($data)) return $data;
+
+    // Sorteren
+    usort($data, function($a, $b) use ($type) {
+        if ($type === 'price_low') {
+            // Van laag naar hoog
+            return $a['price'] <=> $b['price'];
+        } else {
+            // Van hoog naar laag
+            return $b['price'] <=> $a['price'];
+        }
+    });
+
+    return $data;
 }
 ?>

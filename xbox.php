@@ -8,7 +8,21 @@ include_once 'functions.php';
 // Main
 $products = getData("products", "*", ['console_id' => 3]);
 
-if(isset($_POST['']))
+// Controleer of er gefilterd of gezocht is
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+    // Sorteren op prijs (Dropdown)
+    if (isset($_POST['sort'])) {
+        $sortType = $_POST['sort'];
+        $products = sortProductsByPrice($products, $sortType);
+    }
+
+    // Zoeken op tekst (Input veld)
+    if (!empty($_POST['search-inp'])) {
+        $searchInp = $_POST['search-inp'];
+        $products = searchProducts($searchInp, $products);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,15 +50,22 @@ if(isset($_POST['']))
 
     <main>
             <form class="search-bar" action="" method="post">
-                <input type="text" name="search-inp">
+                <input type="text" name="search-inp" placeholder="Typ hier je zoekterm..." value="<?php echo isset($_POST['search-inp']) ? htmlspecialchars($_POST['search-inp']) : ''; ?>">
                 <section class="filter-wrapper">
                     <section class="filter-icon">
                         <span class="bar long"></span>
                         <span class="bar medium"></span>
                         <span class="bar short"></span>
                     </section>
+
+                    <section class="filter-content">
+                        <h4>Sorteren op:</h4>
+                        <label><input type="radio" name="sort" value="price_low"> Prijs: Laag - Hoog</label>
+                        <label><input type="radio" name="sort" value="price_high"> Prijs: Hoog - Laag</label>
+                        <button type="submit">Toepassen</button>
+                    </section>
                 </section>
-                <button type="submit">Zoeken</button>
+                <button type="submit" name="zoeken">Zoeken</button>
             </form>
 
         <?php
