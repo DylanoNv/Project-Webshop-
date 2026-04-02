@@ -18,7 +18,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="playstation.php">Playstation</a></li>
                 <li><a href="pc.php">PC</a></li>
-                <li><a href="Xbox/xbox.php">Xbox</a></li>
+                <li><a href="xbox.php">Xbox</a></li>
                 <li><a href="nintendo.php">Nintendo</a></li>
             </ul>
         </nav>
