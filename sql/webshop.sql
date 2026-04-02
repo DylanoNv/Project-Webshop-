@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 01, 2026 at 10:21 AM
+-- Generation Time: Apr 02, 2026 at 09:30 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.30
 
@@ -51,7 +51,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `age_rating`) VALUES
-(1, 'test', 1);
+(1, 'actie', 1),
+(2, 'shooters', 16),
+(3, 'avontuur', 7),
+(4, 'rpg', 12),
+(5, 'Horror', 18);
 
 -- --------------------------------------------------------
 
@@ -210,7 +214,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `consoles`
