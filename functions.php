@@ -76,7 +76,7 @@ function showProducts($data) {
         // HIER GEBEURT HET: We voegen het pad naar de foto toe als 3e parameter
         $fotoPad = "img/games/" . htmlspecialchars($product['foto']);
         
-        echo "<article class='game-card' onclick=\"openModal('" . htmlspecialchars($product['name']) . "', '" . $product['price'] . "', '" . $fotoPad . "')\">";
+        echo "<article class='game-card' onclick=\"openModal('" . htmlspecialchars($product['id']) . "', '" . htmlspecialchars($product['name']) . "', '" . $product['price'] . "', '" . $fotoPad . "')\">";
         
         echo "<img class='game-img' src='" . $fotoPad . "'>";
         echo "<h3>" . htmlspecialchars($product['name']) . "</h3>";
@@ -121,12 +121,45 @@ function sortProductsByPrice($data, $type) {
 }
 
 // Product toevoegen aan winkelmandje
-function addToCart(){
+function addToCart($productId, $userId = 1) { // Default user_id op 1 voor nu
+    $conn = connectDb();
 
+    // Check of het product al in de mand staat voor deze gebruiker
+    $sqlCheck = "SELECT id, quantity FROM cart WHERE user_id = ? AND product_id = ?";
+    $stmtCheck = $conn->prepare($sqlCheck);
+    $stmtCheck->execute([$userId, $productId]);
+    $item = $stmtCheck->fetch();
+
+    if ($item) {
+        // Als het al bestaat: quantity verhogen
+        $sql = "UPDATE cart SET quantity = quantity + 1 WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt = $stmt->execute([$item['id']]);
+    } else {
+        // Als het nieuw is: toevoegen
+        $sql = "INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, 1)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$userId, $productId]);
+    }
 }
 
 // Product toevoegen aan wishlist
-function addToWishlist(){
-    
+function addToWishlist($productId, $userId = 1) {
+    $conn = connectDb();
+
+    // Check of het product al op de wishlist staat voor deze gebruiker
+    $sqlCheck = "SELECT id FROM wishlist WHERE user_id = ? AND product_id = ?";
+    $stmtCheck = $conn->prepare($sqlCheck);
+    $stmtCheck->execute([$userId, $productId]);
+    $exists = $stmtCheck->fetch();
+
+    // Alleen toevoegen als het nog niet bestaat
+    if (!$exists) {
+        $sql = "INSERT INTO wishlist (user_id, product_id) VALUES (?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$userId, $productId]);
+        return true;
+    }
+    return false;
 }
 ?>

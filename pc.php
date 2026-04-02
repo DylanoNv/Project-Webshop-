@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a href="index.php">Home</a></li>
                 <li><a href="playstation.php">Playstation</a></li>
                 <li><a class="selected-page" href="#">PC</a></li>
-                <li><a class="selected-page" href="xbox.php">Xbox</a></li>
+                <li><a href="xbox.php">Xbox</a></li>
                 <li><a href="nintendo.php">Nintendo</a></li>
             </ul>
         </nav>
