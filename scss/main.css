@@ -44,14 +44,14 @@ body.xbox-page header .winkelmandje-img {
 body.xbox-page main {
   padding: 40px 5%;
 }
-body.xbox-page main section.search-bar {
+body.xbox-page main form.search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
   margin-bottom: 70px;
 }
-body.xbox-page main section.search-bar input {
+body.xbox-page main form.search-bar input {
   padding: 10px 12px;
   border-radius: 6px;
   border: 1px solid rgba(0, 255, 0, 0.5529411765);
@@ -65,12 +65,12 @@ body.xbox-page main section.search-bar input {
   font-size: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-body.xbox-page main section.search-bar input:focus {
+body.xbox-page main form.search-bar input:focus {
   border-color: rgba(0, 255, 0, 0.5529411765);
   transform: translateY(-5px);
   box-shadow: 0 5px 30px #00FF00;
 }
-body.xbox-page main section.search-bar button {
+body.xbox-page main form.search-bar button {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -82,11 +82,11 @@ body.xbox-page main section.search-bar button {
   box-shadow: 0 0 5px rgba(0, 255, 0, 0.5529411765);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-body.xbox-page main section.search-bar button:hover {
+body.xbox-page main form.search-bar button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 30px rgba(0, 255, 0, 0.3);
 }
-body.xbox-page main section.search-bar section.filter-icon {
+body.xbox-page main form.search-bar section.filter-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,26 +97,26 @@ body.xbox-page main section.search-bar section.filter-icon {
   width: fit-content;
   cursor: pointer;
   box-shadow: 0 0 10px #00FF00;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 2s ease;
 }
-body.xbox-page main section.search-bar section.filter-icon:hover {
+body.xbox-page main form.search-bar section.filter-icon:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
 }
-body.xbox-page main section.search-bar section.filter-icon span.bar {
+body.xbox-page main form.search-bar section.filter-icon span.bar {
   display: block;
   height: 6px;
   background-color: #00FF00;
   border-radius: 10px;
   box-shadow: 0 0 7px #00FF00;
 }
-body.xbox-page main section.search-bar section.filter-icon span.long {
+body.xbox-page main form.search-bar section.filter-icon span.long {
   width: 37px;
 }
-body.xbox-page main section.search-bar section.filter-icon span.medium {
+body.xbox-page main form.search-bar section.filter-icon span.medium {
   width: 27px;
 }
-body.xbox-page main section.search-bar section.filter-icon span.short {
+body.xbox-page main form.search-bar section.filter-icon span.short {
   width: 17px;
 }
 body.xbox-page main section.product-container {

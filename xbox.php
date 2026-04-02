@@ -7,6 +7,8 @@ include_once 'functions.php';
 
 // Main
 $products = getData("products", "*", ['console_id' => 3]);
+
+if(isset($_POST['']))
 ?>
 
 <!DOCTYPE html>
@@ -33,17 +35,17 @@ $products = getData("products", "*", ['console_id' => 3]);
     </header>
 
     <main>
-        <section class="search-bar">
-            <input type="text">
-            <section class="filter-wrapper">
-                <section class="filter-icon">
-                    <span class="bar long"></span>
-                    <span class="bar medium"></span>
-                    <span class="bar short"></span>
+            <form class="search-bar" action="" method="post">
+                <input type="text" name="search-inp">
+                <section class="filter-wrapper">
+                    <section class="filter-icon">
+                        <span class="bar long"></span>
+                        <span class="bar medium"></span>
+                        <span class="bar short"></span>
+                    </section>
                 </section>
-            </section>
-            <button>Zoeken</button>
-        </section>
+                <button type="submit">Zoeken</button>
+            </form>
 
         <?php
         showProducts($products);
