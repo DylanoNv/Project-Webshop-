@@ -3,6 +3,45 @@
   padding: 0;
 }
 
+body.home-page {
+  background-color: #121212;
+}
+body.home-page header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+  background-color: #5b008d;
+}
+body.home-page header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  list-style: none;
+}
+body.home-page header nav ul li a {
+  text-decoration: none;
+  font-size: 35px;
+  color: #E0E0E0;
+  font-weight: 500;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+body.home-page header nav ul li a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 15px #cb2eff;
+}
+body.home-page header nav ul li a.selected-page {
+  font-weight: 900;
+  text-shadow: 2px 2px 20px #cb2eff;
+}
+body.home-page header .logo {
+  width: 100px;
+  justify-self: start;
+}
+body.home-page header .winkelmandje-img {
+  width: 100px;
+  justify-self: end;
+}
+
 body.playstation-page {
   background-color: #121212;
 }

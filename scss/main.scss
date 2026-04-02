@@ -13,8 +13,50 @@
 
 // Home pagina
 body.home-page{
+    background-color: $x-bg-color;
+    header{
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        align-items: center;
+        background-color: $h-nav;
+        nav{
+            ul{
+                display: flex;
+                justify-content: center;
+                gap: 100px;
+                list-style: none;
+                li{
+                    a{
+                        text-decoration: none;
+                        font-size: 35px;
+                        color: $x-font-color;
+                        font-weight: 500;
+                        transition: transform 0.3s ease, text-shadow 0.3s ease;
 
+                        &:hover{
+                            transform: translateY(-2px);
+                            text-shadow: 0 0 15px #cb2eff;
+                        }
+                    }
+                    a.selected-page{
+                        font-weight: 900;
+                        text-shadow: 2px 2px 20px #cb2eff;
+                    }
+                }
+            }
+        }
+        .logo{
+            width: $x-nav-img-size ;
+            justify-self: start;
+        }
+
+        .winkelmandje-img{
+            width: $x-nav-img-size;
+            justify-self: end;
+        }
+    }
 }
+
 
 
 
