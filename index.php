@@ -13,6 +13,7 @@ include_once 'functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="shortcut icon" href="img/homepage-picto.png" type="image/x-icon">
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body class="home-page">
@@ -20,7 +21,7 @@ include_once 'functions.php';
         <img class="logo" src="img/Logo.png">
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a class="selected-page" href="#">Home</a></li>
                 <li><a href="playstation.php">Playstation</a></li>
                 <li><a href="pc.php">PC</a></li>
                 <li><a href="xbox.php">Xbox</a></li>

@@ -12,8 +12,8 @@ $products = getData("products", "*", ['console_id' => 3]);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Sorteren op prijs (Dropdown)
-    if (isset($_POST['sort'])) {
-        $sortType = $_POST['sort'];
+    if (isset($_POST['sortPrice'])) {
+        $sortType = $_POST['sortPrice'];
         $products = sortProductsByPrice($products, $sortType);
     }
 
@@ -61,8 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <section class="filter-content">
                         <h4>Sorteren op:</h4>
-                        <label><input type="radio" name="sort" value="price_low"> Prijs: Laag - Hoog</label>
-                        <label><input type="radio" name="sort" value="price_high"> Prijs: Hoog - Laag</label>
+                        <label for="sortPrice"><input type="radio" name="sortPrice" value="price_low"> Prijs: Laag - Hoog</label>
+                        <label for="sortPrice"><input type="radio" name="sortPrice" value="price_high"> Prijs: Hoog - Laag</label>
+
                         <button type="submit">Toepassen</button>
                     </section>
                 </section>

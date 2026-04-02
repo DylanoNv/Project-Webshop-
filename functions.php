@@ -119,4 +119,14 @@ function sortProductsByPrice($data, $type) {
 
     return $data;
 }
+
+// Product toevoegen aan winkelmandje
+function addToCart(){
+
+}
+
+// Product toevoegen aan wishlist
+function addToWishlist(){
+    
+}
 ?>
