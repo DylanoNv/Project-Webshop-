@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['register'])) {
         $username = trim($_POST['username'] ?? '');
         $email = trim($_POST['email'] ?? '');
-        $password = $_POST['password'] ?? '';
-        $password_confirm = $_POST['password_confirm'] ?? '';
+        $password = trim($_POST['password'] ?? '');
+        $password_confirm = trim($_POST['password_confirm'] ?? '');
         
         // Validation
         if (empty($username) || empty($email) || empty($password) || empty($password_confirm)) {

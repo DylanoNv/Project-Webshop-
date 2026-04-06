@@ -271,15 +271,20 @@ function registerUser($username, $email, $password) {
     // Hash the password
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
     
+    // Debug: log what's being stored
+    error_log("Registering user: $username, password hashed to: $hashedPassword");
+    
     // Insert user
     $sql = "INSERT INTO users (username, email, password, is_admin) VALUES (?, ?, ?, 0)";
     $stmt = $conn->prepare($sql);
     
     try {
-        $stmt->execute([$username, $email, $hashedPassword]);
+        $result = $stmt->execute([$username, $email, $hashedPassword]);
+        error_log("Insert result: " . ($result ? 'success' : 'failed'));
         return ['success' => true, 'message' => 'Account succesvol aangemaakt'];
     } catch (PDOException $e) {
-        return ['success' => false, 'message' => 'Fout bij het aanmaken van account'];
+        error_log("Registration error: " . $e->getMessage());
+        return ['success' => false, 'message' => 'Fout bij het aanmaken van account: ' . $e->getMessage()];
     }
 }
 
@@ -293,18 +298,29 @@ function loginUser($username, $password) {
     $stmt->execute([$username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
+    error_log("Login attempt for user: $username");
+    
     if (!$user) {
+        error_log("User not found: $username");
         return ['success' => false, 'message' => 'Gebruikersnaam of wachtwoord incorrect'];
     }
     
+    error_log("User found. Stored hash: " . $user['password']);
+    error_log("Provided password: $password");
+    
     // Verify password
-    if (password_verify($password, $user['password'])) {
+    $passwordMatch = password_verify($password, $user['password']);
+    error_log("Password verification result: " . ($passwordMatch ? 'true' : 'false'));
+    
+    if ($passwordMatch) {
         // Set session
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
+        error_log("User logged in successfully: " . $user['username']);
         return ['success' => true, 'message' => 'Ingelogd'];
     }
     
+    error_log("Password mismatch for user: $username");
     return ['success' => false, 'message' => 'Gebruikersnaam of wachtwoord incorrect'];
 }
 

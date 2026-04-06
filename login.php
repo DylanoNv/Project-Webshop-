@@ -17,7 +17,7 @@ $success = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
         $username = trim($_POST['username'] ?? '');
-        $password = $_POST['password'] ?? '';
+        $password = trim($_POST['password'] ?? '');
         
         if (empty($username) || empty($password)) {
             $error = 'Voer alstublieft gebruikersnaam en wachtwoord in';
