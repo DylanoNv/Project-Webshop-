@@ -43,6 +43,67 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="shortcut icon" href="img/homepage-picto.png" type="image/x-icon">
     <link rel="stylesheet" href="scss/main.css">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        header img.logo {
+            width: 80px;
+            margin-left: 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        nav a:hover {
+            color: #007bff;
+        }
+        
+        header .winkelmandje-img {
+            width: 30px;
+            margin-left: auto;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        
+        main {
+            min-height: calc(100vh - 300px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
         .auth-container {
             max-width: 400px;
             margin: 50px auto;
