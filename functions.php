@@ -28,6 +28,24 @@ function connectDb(){
     }
 }
 
+// Zorg dat default user bestaat
+function ensureDefaultUserExists($userId = 1) {
+    $conn = connectDb();
+    
+    // Check of user bestaat
+    $sql = "SELECT id FROM users WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$userId]);
+    $user = $stmt->fetch();
+    
+    if (!$user) {
+        // Voeg standaard user toe
+        $sql = "INSERT INTO users (id, username, email, password, is_admin) VALUES (?, 'gast', 'gast@webshop.nl', '1234', 0)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$userId]);
+    }
+}
+
 // Ophalen van data
 function getData($table, $selection = "*", $conditions = [], $orderBy = null) {
     // Verbinding maken met database
@@ -127,6 +145,9 @@ function sortProductsByPrice($data, $type) {
 
 // Product toevoegen aan winkelmandje
 function addToCart($productId, $userId = 1) { // Default user_id op 1 voor nu
+    // Zorg dat user bestaat
+    ensureDefaultUserExists($userId);
+    
     $conn = connectDb();
 
     // Check of het product al in de mand staat voor deze gebruiker
@@ -150,6 +171,9 @@ function addToCart($productId, $userId = 1) { // Default user_id op 1 voor nu
 
 // Product toevoegen aan wishlist
 function addToWishlist($productId, $userId = 1) {
+    // Zorg dat user bestaat
+    ensureDefaultUserExists($userId);
+    
     $conn = connectDb();
 
     // Check of het product al op de wishlist staat voor deze gebruiker
