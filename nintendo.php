@@ -22,6 +22,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $searchInp = $_POST['search-inp'];
         $products = searchProducts($searchInp, $products);
     }
+
+    // Voeg product toe aan winkelmandje
+    if (isset($_POST['addToCart']) && !empty($_POST['product_id'])) {
+        $id = $_POST['product_id'];
+        addToCart($id, 1);
+        echo "<script>alert('Product toegevoegd aan winkelmandje!');</script>";
+        header("Location: nintendo.php?status=succes");
+        exit();
+    }
+
+    // Voeg product toe aan wishlist
+    if (isset($_POST['addToWish']) && !empty($_POST['product_id'])) {
+        $id = $_POST['product_id'];
+        addToWishlist($id);
+        echo "<script>alert('Product toegevoegd aan je verlanglijst!');</script>";
+        header("Location: nintendo.php?status=succes");
+        exit();
+    }
 }
 ?>
 
@@ -44,9 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a href="pc.php">PC</a></li>
                 <li><a href="xbox.php">Xbox</a></li>
                 <li><a class="selected-page" href="#">Nintendo</a></li>
+                <li><a href="winkelmandje.php">Winkelmandje</a></li>
             </ul>
         </nav>
-        <img class="winkelmandje-img" src="img/Winkelmandje.png">
+        <a href="winkelmandje.php"><img class="winkelmandje-img" src="img/Winkelmandje.png"></a>
     </header>
 
     <main>
@@ -80,14 +99,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img id=modalImg src="" alt="Game afbeelding">
                 <h2 id="modalTitle"></h2>
                 <p id="modalPrice"></p>
-                <button class="winkelmand-btn">
-                    Voeg toe aan winkelmandje
-                    <img src="img/Add-to-cart.png" alt="Winkelmandje">
-                </button>
-                <button class="wishlist-btn">
-                    Voeg toe aan wishlist
-                    <img src="img/Add_to_wishlist.png" alt="Wishlist">
-                </button>
+                <form class="add-to-wish-and-cart" action="" method="post">
+                    <input type="hidden" name="product_id" id="modalProductId">
+                    <button name="addToCart" type="submit" class="winkelmand-btn">
+                        Voeg toe aan winkelmandje
+                        <img src="img/Add-to-cart.png" alt="Winkelmandje">
+                    </button>
+                    <button name="addToWish" type="submit" class="wishlist-btn">
+                        Voeg toe aan wishlist
+                        <img src="img/Add_to_wishlist.png" alt="Wishlist">
+                    </button>
+                </form>
             </section>
         </section>
     </main>
@@ -97,13 +119,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </footer>
 
     <script>
-        function openModal(name, price, imgSrc){
+        function openModal(id, name, price, imgSrc){
             const modalImageElement = document.getElementById('modalImg');
             modalImageElement.src = imgSrc;
             modalImageElement.alt = "Afbeelding van " + name;
 
             document.getElementById('modalTitle').innerText = name;
             document.getElementById('modalPrice').innerText = "Prijs: €" + price;
+            document.getElementById('modalProductId').value = id;
             document.getElementById('gameModal').style.display = 'block';
         }
         function closeModal(){

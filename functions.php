@@ -2,6 +2,11 @@
 // Functie: Functies declareren
 
 // Inititialisatie
+// Session starten
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Koppelen van configuratiebestand
 include_once 'config.php';
 
@@ -161,5 +166,68 @@ function addToWishlist($productId, $userId = 1) {
         return true;
     }
     return false;
+}
+
+// Get cart items with product details
+function getCartItems($userId = 1) {
+    $conn = connectDb();
+    
+    $sql = "SELECT c.id, c.product_id, c.quantity, p.name, p.price, p.foto 
+            FROM cart c 
+            JOIN products p ON c.product_id = p.id 
+            WHERE c.user_id = ?
+            ORDER BY c.id DESC";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$userId]);
+    
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Remove item from cart
+function removeFromCart($cartId) {
+    $conn = connectDb();
+    
+    $sql = "DELETE FROM cart WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    return $stmt->execute([$cartId]);
+}
+
+// Update cart quantity
+function updateCartQuantity($cartId, $quantity) {
+    $conn = connectDb();
+    
+    if ($quantity <= 0) {
+        return removeFromCart($cartId);
+    }
+    
+    $sql = "UPDATE cart SET quantity = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    return $stmt->execute([$quantity, $cartId]);
+}
+
+// Clear entire cart
+function clearCart($userId = 1) {
+    $conn = connectDb();
+    
+    $sql = "DELETE FROM cart WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    return $stmt->execute([$userId]);
+}
+
+// Get cart total
+function getCartTotal($userId = 1) {
+    $conn = connectDb();
+    
+    $sql = "SELECT SUM(p.price * c.quantity) as total 
+            FROM cart c 
+            JOIN products p ON c.product_id = p.id 
+            WHERE c.user_id = ?";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$userId]);
+    
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['total'] ?? 0;
 }
 ?>
