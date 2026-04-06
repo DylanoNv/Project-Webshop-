@@ -26,8 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = 'Voer alstublieft alle velden in';
         } elseif (strlen($username) < 3) {
             $error = 'Gebruikersnaam moet minstens 3 tekens lang zijn';
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = 'Voer alstublieft een geldig email adres in';
         } elseif (strlen($password) < 6) {
             $error = 'Wachtwoord moet minstens 6 tekens lang zijn';
         } elseif ($password !== $password_confirm) {
