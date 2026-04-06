@@ -5,8 +5,14 @@
 // Initialisatie
 include_once 'functions.php';
 
-// User ID (normally would come from session/authentication)
-$userId = 1;
+// Redirect if not logged in
+if (!isLoggedIn()) {
+    header("Location: login.php");
+    exit();
+}
+
+// Get current user ID
+$userId = getCurrentUserId();
 
 // Handle delete item
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -48,6 +54,47 @@ $cartTotal = getCartTotal($userId);
         .cart-page {
             background-color: #f5f5f5;
             padding: 20px;
+        }
+        
+        .header-user-menu {
+            position: absolute;
+            right: 100px;
+            top: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .header-user-menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .header-user-menu a:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .btn-logout {
+            background-color: #dc3545;
+            color: white !important;
+            padding: 8px 15px !important;
+        }
+        
+        .btn-logout:hover {
+            background-color: #c82333 !important;
+        }
+        
+        .user-info {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        header {
+            position: relative;
         }
         
         .cart-container {
@@ -217,6 +264,10 @@ $cartTotal = getCartTotal($userId);
                 <li><a class="selected-page" href="#">Winkelmandje</a></li>
             </ul>
         </nav>
+        <div class="header-user-menu">
+            <span class="user-info">Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span>
+            <a href="logout.php" class="btn-logout">Uitloggen</a>
+        </div>
         <a href="winkelmandje.php"><img class="winkelmandje-img" src="img/Winkelmandje.png"></a>
     </header>
 

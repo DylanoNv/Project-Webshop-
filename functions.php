@@ -254,4 +254,76 @@ function getCartTotal($userId = 1) {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result['total'] ?? 0;
 }
+
+// User registration
+function registerUser($username, $email, $password) {
+    $conn = connectDb();
+    
+    // Check if username or email already exists
+    $sqlCheck = "SELECT id FROM users WHERE username = ? OR email = ?";
+    $stmtCheck = $conn->prepare($sqlCheck);
+    $stmtCheck->execute([$username, $email]);
+    
+    if ($stmtCheck->fetch()) {
+        return ['success' => false, 'message' => 'Gebruikersnaam of email bestaat al'];
+    }
+    
+    // Hash the password
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+    
+    // Insert user
+    $sql = "INSERT INTO users (username, email, password, is_admin) VALUES (?, ?, ?, 0)";
+    $stmt = $conn->prepare($sql);
+    
+    try {
+        $stmt->execute([$username, $email, $hashedPassword]);
+        return ['success' => true, 'message' => 'Account succesvol aangemaakt'];
+    } catch (PDOException $e) {
+        return ['success' => false, 'message' => 'Fout bij het aanmaken van account'];
+    }
+}
+
+// User login
+function loginUser($username, $password) {
+    $conn = connectDb();
+    
+    // Find user by username
+    $sql = "SELECT id, username, password FROM users WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$username]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if (!$user) {
+        return ['success' => false, 'message' => 'Gebruikersnaam of wachtwoord incorrect'];
+    }
+    
+    // Verify password
+    if (password_verify($password, $user['password'])) {
+        // Set session
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        return ['success' => true, 'message' => 'Ingelogd'];
+    }
+    
+    return ['success' => false, 'message' => 'Gebruikersnaam of wachtwoord incorrect'];
+}
+
+// Get current logged in user ID
+function getCurrentUserId() {
+    if (isset($_SESSION['user_id'])) {
+        return $_SESSION['user_id'];
+    }
+    return null;
+}
+
+// Check if user is logged in
+function isLoggedIn() {
+    return isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
+}
+
+// Logout user
+function logoutUser() {
+    session_destroy();
+    $_SESSION = [];
+}
 ?>
