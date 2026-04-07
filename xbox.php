@@ -128,6 +128,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Voeg toe aan wishlist
                         <img src="img/Add_to_wishlist.png" alt="Wishlist">
                     </button>
+                    <button name="deletegame" type="submit" class="delete-btn">
+                        Verwijder game
+                    </button>
                 </form>
             </section>
         </section>
