@@ -1,92 +1,20 @@
-<?php
-// Auteur: Dion Breur
-// Functie: Tonen van Playstation producten
-
-// Initialisatie
-include_once 'functions.php';
-
-// Get current user ID (use guest if not logged in)
-$userId = isLoggedIn() ? getCurrentUserId() : null;
-
-// Main
-$products = getData("products", "*", ['console_id' => 1]);
-
-// Controleer of er gefilterd of gezocht is
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    // Sorteren op prijs (Dropdown)
-    if (isset($_POST['sortPrice'])) {
-        $sortType = $_POST['sortPrice'];
-        $products = sortProductsByPrice($products, $sortType);
-    }
-
-    // Zoeken op tekst (Input veld)
-    if (!empty($_POST['search-inp'])) {
-        $searchInp = $_POST['search-inp'];
-        $products = searchProducts($searchInp, $products);
-    }
-
-    // Voeg product toe aan winkelmandje
-    if (isset($_POST['addToCart'])) {
-        if (!isLoggedIn()) {
-            header("Location: login.php");
-            exit();
-        }
-        if (!empty($_POST['product_id'])) {
-            $id = $_POST['product_id'];
-            addToCart($id, getCurrentUserId());
-            echo "<script>alert('Product toegevoegd aan winkelmandje!');</script>";
-            header("Location: playstation.php?status=succes");
-            exit();
-        }
-    }
-
-    // Voeg product toe aan wishlist
-    if (isset($_POST['addToWish'])) {
-        if (!isLoggedIn()) {
-            header("Location: login.php");
-            exit();
-        }
-        if (!empty($_POST['product_id'])) {
-            $id = $_POST['product_id'];
-            addToWishlist($id, getCurrentUserId());
-            echo "<script>alert('Product toegevoegd aan je verlanglijst!');</script>";
-            header("Location: playstation.php?status=succes");
-            exit();
-        }
-    }
-
-    // Verwijder product (admin only)
-    if (isset($_POST['deletegame']) && !empty($_POST['product_id'])) {
-        if (!isAdmin()) {
-            header("Location: playstation.php?status=error");
-            exit();
-        }
-        $id = $_POST['product_id'];
-        deleteProduct($id);
-        echo "<script>alert('Product verwijderd!');</script>";
-        header("Location: playstation.php?status=deleted");
-        exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playstion Producten</title>
-    <link rel="shortcut icon" href="img/ps-picto.png" type="image/x-icon">
+    <title>PC Producten</title>
+    <link rel="shortcut icon" href="img/pc-picto.png" type="image/x-icon">
     <link rel="stylesheet" href="scss/main.css">
 </head>
-<body class="playstation-page">
+<body class="pc-page">
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a class="selected-page" href="#">Playstation</a></li>
-                <li><a href="pc.php">PC</a></li>
+                <li><a href="playstation.php">Playstation</a></li>
+                <li><a class="selected-page" href="#">PC</a></li>
                 <li><a href="xbox.php">Xbox</a></li>
                 <li><a href="nintendo.php">Nintendo</a></li>
             </ul>
