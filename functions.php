@@ -39,10 +39,11 @@ function ensureDefaultUserExists($userId = 1) {
     $user = $stmt->fetch();
     
     if (!$user) {
-        // Voeg standaard user toe
-        $sql = "INSERT INTO users (id, username, email, password, is_admin) VALUES (?, 'gast', 'gast@webshop.nl', '1234', 0)";
+        // Voeg standaard user toe met gehashte wachtwoord
+        $hashedPassword = password_hash('1234', PASSWORD_BCRYPT);
+        $sql = "INSERT INTO users (id, username, email, password, is_admin) VALUES (?, 'gast', 'gast@webshop.nl', ?, 0)";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$userId]);
+        $stmt->execute([$userId, $hashedPassword]);
     }
 }
 
