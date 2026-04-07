@@ -2,6 +2,7 @@
 // Functie: Login pagina
 
 // Initialisatie
+session_start();
 include_once 'functions.php';
 
 // Controleer of gebruiker al ingelogd is
