@@ -51,7 +51,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: xbox.php?status=succes");
         exit();
     }
-}
+
+    // Verwijder product (admin only)
+    if (isset($_POST['deletegame']) && !empty($_POST['product_id'])) {
+        if (!isAdmin()) {
+            header("Location: xbox.php?status=error");
+            exit();
+        }
+        $id = $_POST['product_id'];
+        deleteProduct($id);
+        echo "<script>alert('Product verwijderd!');</script>";
+        header("Location: xbox.php?status=deleted");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>

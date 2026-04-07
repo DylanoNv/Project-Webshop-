@@ -105,6 +105,15 @@ function showProducts($data) {
         echo "<img class='game-img' src='" . $fotoPad . "'>";
         echo "<h3>" . htmlspecialchars($product['name']) . "</h3>";
         echo "<p>Prijs: €" . number_format($product['price'], 2, ',', '.') . "</p>";
+        
+        // Add delete button if admin
+        if (isAdmin()) {
+            echo "<form class='delete-form' action='' method='post' onsubmit='return confirm(\"Weet je zeker dat je dit product wilt verwijderen?\");'>";
+            echo "<input type='hidden' name='product_id' value='" . htmlspecialchars($product['id']) . "'>";
+            echo "<button type='submit' name='deletegame' class='delete-btn'>Verwijder</button>";
+            echo "</form>";
+        }
+        
         echo "</article>";
     }
     echo "</section>";
@@ -191,6 +200,26 @@ function addToWishlist($productId, $userId = 1) {
         return true;
     }
     return false;
+}
+
+// Delete product from database (admin only)
+function deleteProduct($productId) {
+    $conn = connectDb();
+    
+    // Delete from cart first to avoid foreign key issues
+    $sqlCart = "DELETE FROM cart WHERE product_id = ?";
+    $stmtCart = $conn->prepare($sqlCart);
+    $stmtCart->execute([$productId]);
+    
+    // Delete from wishlist
+    $sqlWishlist = "DELETE FROM wishlist WHERE product_id = ?";
+    $stmtWishlist = $conn->prepare($sqlWishlist);
+    $stmtWishlist->execute([$productId]);
+    
+    // Delete the product
+    $sql = "DELETE FROM products WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    return $stmt->execute([$productId]);
 }
 
 // Get cart items with product details
@@ -336,6 +365,14 @@ function getCurrentUserId() {
 // Check if user is logged in
 function isLoggedIn() {
     return isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
+}
+
+// Check if current user is admin
+function isAdmin() {
+    if (!isLoggedIn()) return false;
+    $userId = getCurrentUserId();
+    $user = getData("users", "*", ['id' => $userId]);
+    return !empty($user) && $user[0]['is_admin'] == 1;
 }
 
 // Logout user
