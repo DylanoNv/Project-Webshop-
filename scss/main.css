@@ -299,6 +299,8 @@ body.playstation-page main section.game-modal section.modal-content span {
   font-size: 28px;
 }
 body.playstation-page main section.game-modal section.modal-content img {
+  width: 500px;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 0 10px #00c3ff;
 }
