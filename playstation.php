@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     }
+}
 
     // Voeg product toe aan wishlist
     if (isset($_POST['addToWish'])) {
