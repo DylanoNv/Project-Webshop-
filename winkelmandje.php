@@ -50,6 +50,206 @@ $cartTotal = getCartTotal($userId);
     <title>Winkelmandje</title>
     <link rel="shortcut icon" href="img/homepage-picto.png" type="image/x-icon">
     <link rel="stylesheet" href="scss/main.css">
+    <style>
+        .cart-page {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+
+        .header-user-menu {
+            position: absolute;
+            right: 100px;
+            top: 15px;
+            right: 20px;
+            top: 8px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .header-user-menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-logout {
+            background-color: #dc3545;
+            color: white !important;
+            padding: 8px 15px !important;
+            padding: 6px 12px !important;
+        }
+        
+        .user-info {
+            font-size: 14px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        header {
+            position: relative;
+        }
+        
+        .cart-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .cart-empty a {
+            color: #007bff;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+}
+        
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1fr 100px 100px 100px 80px;
+            gap: 15px;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+        
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .cart-item-details h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        
+        .cart-item-details p {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .cart-item-price {
+            font-weight: bold;
+            font-size: 16px;
+            color: #007bff;
+        }
+        
+        .cart-item-quantity input {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .cart-item-total {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .cart-item-remove {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .cart-item-remove:hover {
+            background-color: #c82333;
+        }
+        
+        .cart-summary {
+            text-align: right;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+        
+        .cart-summary h2 {
+            margin: 20px 0 30px 0;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .cart-actions {
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-continue {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-continue:hover {
+            background-color: #5a6268;
+        }
+        
+        .btn-checkout {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-checkout:hover {
+            background-color: #218838;
+        }
+        
+        .cart-header {
+            display: none;
+        }
+        
+        
+            .cart-header {
+                display: grid;
+                grid-template-columns: 100px 1fr 100px 100px 100px 80px;
+                gap: 15px;
+                padding: 15px;
+                border-bottom: 2px solid #333;
+                margin-bottom: 15px;
+                font-weight: bold;
+                color: #333;
+}
+
+        .winkelmandje-img {
+            display: block;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body class="cart-page">
     <header>
