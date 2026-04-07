@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Playstion Producten</title>
     <link rel="shortcut icon" href="img/ps-picto.png" type="image/x-icon">
     <link rel="stylesheet" href="scss/main.css">
-    <style>
+    <!-- <style>
         .header-user-menu {
             position: absolute;
             right: 100px;
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         /* header {
             position: relative;
         } */
-    </style>
+    </style> -->
 </head>
 <body class="playstation-page">
     <header>
