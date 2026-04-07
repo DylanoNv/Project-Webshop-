@@ -1,5 +1,14 @@
 // Home page variabelen
 $h-nav: #5b008d;
+$home-nav-glow: #cb2eff;
+
+
+// Global variabelen
+$ui-text: #333;
+$ui-muted: #666;
+$ui-hover-bg: #f0f0f0;
+$btn-danger-bg: #dc3545;
+$btn-danger-hover-bg: #c82333;
 
 
 
@@ -8,10 +17,21 @@ $ps-header-bg: #00439C;
 $ps-shadow-col: #00c3ff;
 $ps-shadow-dark-col: rgba(0, 166, 255, 0.3);
 $box-shadow: #0091ff8d;
+$ps-panel-bg: #01243e;
+$ps-input-bg: #004761;
+$ps-accent: #0099ff;
+$ps-icon-bar: #008cff;
+$ps-modal-border: #00c8ff;
 
 
 
 // PC variabelen
+$pc-accent: #FF8C00;
+$pc-panel-bg: #5a2d00;
+$pc-button-bg: #4a2500;
+$pc-border-alpha: #FF8C008d;
+$pc-glow-soft: rgba(255, 140, 0, 0.3);
+$pc-glow-strong: rgba(255, 140, 0, 0.8);
 
 
 
@@ -20,9 +40,21 @@ $x-font-color: #E0E0E0;
 $x-nav-font-weight: 550;
 $x-bg-color: #121212;
 $x-nav-img-size: 100px;
-$x-header-bg: #004500;
+$x-panel-bg: #004500;
+$x-header-bg: $x-panel-bg;
 $x-product-card-shadow: 4px 4px 10px #00FF00;
+$x-accent: #00FF00;
+$x-border-alpha: #00ff008d;
+$x-button-bg: #013e01;
+$x-glow-soft: rgba(0, 255, 0, 0.3);
+$x-glow-strong: rgba(0, 255, 0, 0.8);
 
 
 
 // Nintendo variabelen
+$nin-accent: #E60012;
+$nin-panel-bg: #7a0008;
+$nin-button-bg: #5a0006;
+$nin-border-alpha: #E600128d;
+$nin-glow-soft: rgba(230, 0, 18, 0.3);
+$nin-glow-strong: rgba(230, 0, 18, 0.8);

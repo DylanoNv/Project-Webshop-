@@ -66,21 +66,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Playstion Producten</title>
     <link rel="shortcut icon" href="img/ps-picto.png" type="image/x-icon">
     <link rel="stylesheet" href="scss/main.css">
-    <!-- <style>
+    <!--     <style>
         .header-user-menu {
             position: absolute;
-            right: 100px;
-            top: 15px;
+            right: 20px;
+            top: 8px;
             display: flex;
             gap: 15px;
             align-items: center;
+            z-index: 2;
         }
         
         .header-user-menu a {
             color: #333;
             text-decoration: none;
-            font-size: 14px;
-            padding: 5px 10px;
+            font-size: 12px;
+            padding: 4px 8px;
             border-radius: 4px;
             transition: background-color 0.3s;
         }
@@ -92,21 +93,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .btn-logout {
             background-color: #dc3545;
             color: white !important;
-            padding: 8px 15px !important;
+            padding: 6px 12px !important;
         }
         
         .btn-logout:hover {
             background-color: #c82333 !important;
         }
         
-        /* .user-info {
-            font-size: 14px;
+        .user-info {
+            font-size: 12px;
             color: #666;
-        } */
+        }
         
-        /* header {
+        header {
             position: relative;
-        } */
+        }
+
+        .winkelmandje-img {
+            display: block;
+            margin-top: 40px;
+        }
     </style> -->
 </head>
 <body class="playstation-page">
@@ -201,3 +207,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
 </body>
 </html>
+

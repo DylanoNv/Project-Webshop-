@@ -11,43 +11,49 @@
 
 .header-user-menu {
     position: absolute;
-    right: 100px;
-    top: 15px;
+    right: 20px;
+    top: 8px;
     display: flex;
     gap: 15px;
     align-items: center;
+    z-index: 2;
 }
 
 .header-user-menu a {
-    color: #333;
+    color: $ui-text;
     text-decoration: none;
-    font-size: 14px;
-    padding: 5px 10px;
+    font-size: 12px;
+    padding: 4px 8px;
     border-radius: 4px;
     transition: background-color 0.3s;
 }
 
 .header-user-menu a:hover {
-    background-color: #f0f0f0;
+    background-color: $ui-hover-bg;
 }
 
 .btn-logout {
-    background-color: #dc3545;
+    background-color: $btn-danger-bg;
     color: white !important;
-    padding: 8px 15px !important;
+    padding: 6px 12px !important;
 }
 
 .btn-logout:hover {
-    background-color: #c82333 !important;
+    background-color: $btn-danger-hover-bg !important;
 }
 
 .user-info {
     font-size: 14px;
-    color: #666;
+    color: $ui-muted;
 }
 
 header {
     position: relative;
+}
+
+.winkelmandje-img {
+    display: block;
+    margin-top: 40px;
 }
 
 // Home pagina
@@ -74,12 +80,12 @@ body.home-page{
 
                         &:hover{
                             transform: translateY(-2px);
-                            text-shadow: 0 0 15px #cb2eff;
+                            text-shadow: 0 0 15px $home-nav-glow;
                         }
                     }
                     a.selected-page{
                         font-weight: 900;
-                        text-shadow: 2px 2px 20px #cb2eff;
+                        text-shadow: 2px 2px 20px $home-nav-glow;
                     }
                 }
             }
@@ -157,8 +163,8 @@ body.playstation-page{
             input {
                 padding: 10px 12px;
                 border-radius: 6px;
-                border: 1px solid #01243e;
-                background: #004761;
+                border: 1px solid $ps-panel-bg;
+                background: $ps-input-bg;
                 color: white;
                 min-width: 220px;
                 box-shadow: 0 0 5px $box-shadow;
@@ -169,7 +175,7 @@ body.playstation-page{
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 &:focus{
-                    border-color: #01243e;
+                    border-color: $ps-panel-bg;
                     transform: translateY(-5px);
                     box-shadow: 0 5px 30px $ps-shadow-col;
                 }
@@ -191,7 +197,7 @@ body.playstation-page{
                 position: absolute;
                 right: 0;
                 top: 40px;
-                background-color: #01243e;
+                background-color: $ps-panel-bg;
                 min-width: 200px;
                 box-shadow: 0 8px 16px $ps-shadow-col;
                 padding: 15px;
@@ -200,13 +206,13 @@ body.playstation-page{
 
                 h4{
                     margin: 0 0 10px 0;
-                    color: #0099ff;
+                    color: $ps-accent;
                     font-size: 14px;
                 }
 
                 label{
                     display: block;
-                    color: #0099ff;
+                    color: $ps-accent;
                     font-size: 13px;
                     margin-bottom: 8px;
                     cursor: pointer;
@@ -221,8 +227,8 @@ body.playstation-page{
                 padding: 10px 20px;
                 border: none;
                 border-radius: 6px;
-                background-color: #01243e;
-                color: #0099ff;
+                background-color: $ps-panel-bg;
+                color: $ps-accent;
                 font-weight: 700;
                 font-size: 18px;
                 cursor: pointer;
@@ -242,7 +248,7 @@ body.playstation-page{
                 gap: 5px;            
                 padding: 10px;
                 border-radius: 8px;
-                background-color: #01243e;
+                background-color: $ps-panel-bg;
                 width: fit-content;
                 cursor: pointer;
                 box-shadow: 0 0 10px $box-shadow;
@@ -256,7 +262,7 @@ body.playstation-page{
                 span.bar{
                     display: block;
                     height: 6px;
-                    background-color: #008cff;
+                    background-color: $ps-icon-bar;
                     border-radius: 10px;
                     box-shadow: 0 0 7px $ps-shadow-col;
                 }
@@ -283,7 +289,7 @@ body.playstation-page{
 
             article.game-card {
                 text-align: center;
-                background-color: #01243e;
+                background-color: $ps-panel-bg;
                 color: $x-font-color;
                 width: 100%;
                 max-width: 420px;
@@ -310,7 +316,7 @@ body.playstation-page{
 
                     p.price {
                         font-weight: bold;
-                        color: #0099ff;
+                        color: $ps-accent;
                         font-size: 1.2rem;
                     }
                 }
@@ -335,10 +341,10 @@ body.playstation-page{
             background-color: $x-bg-color;
 
             section.modal-content{
-                background-color: #01243e;
+                background-color: $ps-panel-bg;
                 margin: 15% auto;
                 padding: 20px;
-                border: 1px solid #00c8ff;
+                border: 1px solid $ps-modal-border;
                 width: 40%;
                 color: white;
 
@@ -365,8 +371,8 @@ body.playstation-page{
                     padding: 10px 20px;
                     border: none;
                     border-radius: 6px;
-                    background-color: #01243e;
-                    color: #0099ff;
+                    background-color: $ps-panel-bg;
+                    color: $ps-accent;
                     font-weight: 700;
                     font-size: 18px;
                     cursor: pointer;
@@ -403,7 +409,7 @@ body.pc-page{
         display: grid;
         grid-template-columns: 1fr 5fr 1fr;
         align-items: center;
-        background-color: #5a2d00;
+        background-color: $pc-panel-bg;
         nav{
             ul{
                 display: flex;
@@ -420,12 +426,12 @@ body.pc-page{
 
                         &:hover{
                             transform: translateY(-2px);
-                            text-shadow: 0 0 15px #FF8C00;
+                            text-shadow: 0 0 15px $pc-accent;
                         }
                     }
                     a.selected-page{
                         font-weight: 900;
-                        text-shadow: 2px 2px 20px #FF8C00;
+                        text-shadow: 2px 2px 20px $pc-accent;
                     }
                 }
             }
@@ -454,11 +460,11 @@ body.pc-page{
             input {
                 padding: 10px 12px;
                 border-radius: 6px;
-                border: 1px solid #FF8C008d;
-                background: #5a2d00;
+                border: 1px solid $pc-accent8d;
+                background: $pc-panel-bg;
                 color: white;
                 min-width: 220px;
-                box-shadow: 0 0 5px #FF8C00;
+                box-shadow: 0 0 5px $pc-accent;
                 width: 600px;
                 height: 20px;
                 outline: none;
@@ -466,9 +472,9 @@ body.pc-page{
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 &:focus{
-                    border-color: #FF8C008d;
+                    border-color: $pc-accent8d;
                     transform: translateY(-5px);
-                    box-shadow: 0 5px 30px #FF8C00;
+                    box-shadow: 0 5px 30px $pc-accent;
                 }
             }
 
@@ -488,22 +494,22 @@ body.pc-page{
                 position: absolute;
                 right: 0;
                 top: 40px;
-                background-color: #5a2d00;
+                background-color: $pc-panel-bg;
                 min-width: 200px;
-                box-shadow: 0 8px 16px #FF8C00;
+                box-shadow: 0 8px 16px $pc-accent;
                 padding: 15px;
                 z-index: 99;
                 border-radius: 5px;
 
                 h4{
                     margin: 0 0 10px 0;
-                    color: #FF8C00;
+                    color: $pc-accent;
                     font-size: 14px;
                 }
 
                 label{
                     display: block;
-                    color: #FF8C00;
+                    color: $pc-accent;
                     font-size: 13px;
                     margin-bottom: 8px;
                     cursor: pointer;
@@ -518,17 +524,17 @@ body.pc-page{
                 padding: 10px 20px;
                 border: none;
                 border-radius: 6px;
-                background-color: #5a2d00;
-                color: #FF8C00;
+                background-color: $pc-panel-bg;
+                color: $pc-accent;
                 font-weight: 700;
                 font-size: 18px;
                 cursor: pointer;
-                box-shadow: 0 0 5px #FF8C008d;
+                box-shadow: 0 0 5px $pc-accent8d;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 &:hover{
                     transform: translateY(-2px);
-                    box-shadow: 0 5px 30px rgba(255, 140, 0, 0.3);
+                    box-shadow: 0 5px 30px $pc-glow-soft;
                 }
             }
 
@@ -539,23 +545,23 @@ body.pc-page{
                 gap: 5px;            
                 padding: 10px;
                 border-radius: 8px;
-                background-color: #5a2d00;
+                background-color: $pc-panel-bg;
                 width: fit-content;
                 cursor: pointer;
-                box-shadow: 0 0 10px #FF8C00;
+                box-shadow: 0 0 10px $pc-accent;
                 transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 02s ease;
 
                 &:hover {
                     transform: translateY(-3px);
-                    box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
+                    box-shadow: 0 0 15px $pc-glow-strong;
                 }
 
                 span.bar{
                     display: block;
                     height: 6px;
-                    background-color: #FF8C00;
+                    background-color: $pc-accent;
                     border-radius: 10px;
-                    box-shadow: 0 0 7px #FF8C00;
+                    box-shadow: 0 0 7px $pc-accent;
                 }
 
                 span.long{
@@ -580,20 +586,20 @@ body.pc-page{
 
             article.game-card {
                 text-align: center;
-                background-color: #5a2d00;
+                background-color: $pc-panel-bg;
                 color: $x-font-color;
                 width: 100%;
                 max-width: 420px;
                 border-radius: 10px;
                 overflow: hidden;
-                box-shadow: 4px 4px 10px #FF8C00;
+                box-shadow: 4px 4px 10px $pc-accent;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 display: flex;
                 flex-direction: column;
 
                 &:hover {
                     transform: translateY(-10px);
-                    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+                    box-shadow: 0 15px 30px $pc-glow-soft;
                 }
 
                 .game-info {
@@ -607,7 +613,7 @@ body.pc-page{
 
                     p.price {
                         font-weight: bold;
-                        color: #FF8C00;
+                        color: $pc-accent;
                         font-size: 1.2rem;
                     }
                 }
@@ -632,10 +638,10 @@ body.pc-page{
             background-color: $x-bg-color;
 
             section.modal-content{
-                background-color: #5a2d00;
+                background-color: $pc-panel-bg;
                 margin: 15% auto;
                 padding: 20px;
-                border: 1px solid #FF8C00;
+                border: 1px solid $pc-accent;
                 width: 40%;
                 color: white;
 
@@ -650,7 +656,7 @@ body.pc-page{
                     width: 500px;
                     height: 300px;
                     border-radius: 10px;
-                    box-shadow: 0 0 10px #FF8C00;
+                    box-shadow: 0 0 10px $pc-accent;
                 }
 
                 button {
@@ -662,12 +668,12 @@ body.pc-page{
                     padding: 10px 20px;
                     border: none;
                     border-radius: 6px;
-                    background-color: #4a2500;
-                    color: #FF8C00;
+                    background-color: $pc-button-bg;
+                    color: $pc-accent;
                     font-weight: 700;
                     font-size: 18px;
                     cursor: pointer;
-                    box-shadow: 0 0 5px #FF8C008d;
+                    box-shadow: 0 0 5px $pc-accent8d;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     width: 100%;
                     max-width: 308px;
@@ -682,7 +688,7 @@ body.pc-page{
 
                     &:hover{
                         transform: translateY(-2px);
-                        box-shadow: 0 5px 30px rgba(255, 140, 0, 0.3);
+                        box-shadow: 0 5px 30px $pc-glow-soft;
                     }
                 }
             }
@@ -716,12 +722,12 @@ body.xbox-page{
 
                         &:hover{
                             transform: translateY(-2px);
-                            text-shadow: 0 0 15px #00FF00;
+                            text-shadow: 0 0 15px $x-accent;
                         }
                     }
                     a.selected-page{
                         font-weight: 900;
-                        text-shadow: 2px 2px 20px #00FF00;
+                        text-shadow: 2px 2px 20px $x-accent;
                     }
                 }
             }
@@ -750,11 +756,11 @@ body.xbox-page{
             input {
                 padding: 10px 12px;
                 border-radius: 6px;
-                border: 1px solid #00ff008d;
-                background: #004500;
+                border: 1px solid $x-accent8d;
+                background: $x-panel-bg;
                 color: white;
                 min-width: 220px;
-                box-shadow: 0 0 5px #00FF00;
+                box-shadow: 0 0 5px $x-accent;
                 width: 600px;
                 height: 20px;
                 outline: none;
@@ -762,9 +768,9 @@ body.xbox-page{
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 &:focus{
-                    border-color: #00FF008d;
+                    border-color: $x-accent8d;
                     transform: translateY(-5px);
-                    box-shadow: 0 5px 30px #00FF00;
+                    box-shadow: 0 5px 30px $x-accent;
                 }
             }
 
@@ -784,22 +790,22 @@ body.xbox-page{
                 position: absolute;
                 right: 0;
                 top: 40px;
-                background-color: #004500;
+                background-color: $x-panel-bg;
                 min-width: 200px;
-                box-shadow: 0 8px 16px #00FF00;
+                box-shadow: 0 8px 16px $x-accent;
                 padding: 15px;
                 z-index: 99;
                 border-radius: 5px;
 
                 h4{
                     margin: 0 0 10px 0;
-                    color: #00FF00;
+                    color: $x-accent;
                     font-size: 14px;
                 }
 
                 label{
                     display: block;
-                    color: #00FF00;
+                    color: $x-accent;
                     font-size: 13px;
                     margin-bottom: 8px;
                     cursor: pointer;
@@ -814,17 +820,17 @@ body.xbox-page{
                 padding: 10px 20px;
                 border: none;
                 border-radius: 6px;
-                background-color: #004500;
-                color: #00FF00;
+                background-color: $x-panel-bg;
+                color: $x-accent;
                 font-weight: 700;
                 font-size: 18px;
                 cursor: pointer;
-                box-shadow: 0 0 5px #00FF008d;
+                box-shadow: 0 0 5px $x-accent8d;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 &:hover{
                     transform: translateY(-2px);
-                    box-shadow: 0 5px 30px rgba(0, 255, 0, 0.3);
+                    box-shadow: 0 5px 30px $x-glow-soft;
                 }
             }
 
@@ -835,23 +841,23 @@ body.xbox-page{
                 gap: 5px;            
                 padding: 10px;
                 border-radius: 8px;
-                background-color: #004500;
+                background-color: $x-panel-bg;
                 width: fit-content;
                 cursor: pointer;
-                box-shadow: 0 0 10px #00FF00;
+                box-shadow: 0 0 10px $x-accent;
                 transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 02s ease;
 
                 &:hover {
                     transform: translateY(-3px);
-                    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+                    box-shadow: 0 0 15px $x-glow-strong;
                 }
 
                 span.bar{
                     display: block;
                     height: 6px;
-                    background-color: #00FF00;
+                    background-color: $x-accent;
                     border-radius: 10px;
-                    box-shadow: 0 0 7px #00FF00;
+                    box-shadow: 0 0 7px $x-accent;
                 }
 
                 span.long{
@@ -876,7 +882,7 @@ body.xbox-page{
 
             article.game-card {
                 text-align: center;
-                background-color: #004500;
+                background-color: $x-panel-bg;
                 color: $x-font-color;
                 width: 100%;
                 max-width: 420px;
@@ -889,7 +895,7 @@ body.xbox-page{
 
                 &:hover {
                     transform: translateY(-10px);
-                    box-shadow: 0 15px 30px rgba(0, 255, 0, 0.3);
+                    box-shadow: 0 15px 30px $x-glow-soft;
                 }
 
                 .game-info {
@@ -903,7 +909,7 @@ body.xbox-page{
 
                     p.price {
                         font-weight: bold;
-                        color: #00FF00;
+                        color: $x-accent;
                         font-size: 1.2rem;
                     }
                 }
@@ -928,10 +934,10 @@ body.xbox-page{
             background-color: $x-bg-color;
 
             section.modal-content{
-                background-color: #004500;
+                background-color: $x-panel-bg;
                 margin: 15% auto;
                 padding: 20px;
-                border: 1px solid #00FF00;
+                border: 1px solid $x-accent;
                 width: 40%;
                 color: white;
 
@@ -946,7 +952,7 @@ body.xbox-page{
                     width: 500px;
                     height: 300px;
                     border-radius: 10px;
-                    box-shadow: 0 0 10px #00FF00;
+                    box-shadow: 0 0 10px $x-accent;
                 }
 
                 button {
@@ -958,12 +964,12 @@ body.xbox-page{
                     padding: 10px 20px;
                     border: none;
                     border-radius: 6px;
-                    background-color: #013e01;
-                    color: #00FF00;
+                    background-color: $x-button-bg;
+                    color: $x-accent;
                     font-weight: 700;
                     font-size: 18px;
                     cursor: pointer;
-                    box-shadow: 0 0 5px #00FF008d;
+                    box-shadow: 0 0 5px $x-accent8d;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     width: 100%;
                     max-width: 308px;
@@ -978,7 +984,7 @@ body.xbox-page{
 
                     &:hover{
                         transform: translateY(-2px);
-                        box-shadow: 0 5px 30px rgba(0, 255, 0, 0.3);
+                        box-shadow: 0 5px 30px $x-glow-soft;
                     }
                 }
             }
@@ -995,7 +1001,7 @@ body.nintendo-page{
         display: grid;
         grid-template-columns: 1fr 5fr 1fr;
         align-items: center;
-        background-color: #7a0008;
+        background-color: $nin-panel-bg;
         nav{
             ul{
                 display: flex;
@@ -1012,12 +1018,12 @@ body.nintendo-page{
 
                         &:hover{
                             transform: translateY(-2px);
-                            text-shadow: 0 0 15px #E60012;
+                            text-shadow: 0 0 15px $nin-accent;
                         }
                     }
                     a.selected-page{
                         font-weight: 900;
-                        text-shadow: 2px 2px 20px #E60012;
+                        text-shadow: 2px 2px 20px $nin-accent;
                     }
                 }
             }
@@ -1046,11 +1052,11 @@ body.nintendo-page{
             input {
                 padding: 10px 12px;
                 border-radius: 6px;
-                border: 1px solid #E600128d;
-                background: #7a0008;
+                border: 1px solid $nin-accent8d;
+                background: $nin-panel-bg;
                 color: white;
                 min-width: 220px;
-                box-shadow: 0 0 5px #E60012;
+                box-shadow: 0 0 5px $nin-accent;
                 width: 600px;
                 height: 20px;
                 outline: none;
@@ -1058,9 +1064,9 @@ body.nintendo-page{
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 &:focus{
-                    border-color: #E600128d;
+                    border-color: $nin-accent8d;
                     transform: translateY(-5px);
-                    box-shadow: 0 5px 30px #E60012;
+                    box-shadow: 0 5px 30px $nin-accent;
                 }
             }
 
@@ -1080,22 +1086,22 @@ body.nintendo-page{
                 position: absolute;
                 right: 0;
                 top: 40px;
-                background-color: #7a0008;
+                background-color: $nin-panel-bg;
                 min-width: 200px;
-                box-shadow: 0 8px 16px #E60012;
+                box-shadow: 0 8px 16px $nin-accent;
                 padding: 15px;
                 z-index: 99;
                 border-radius: 5px;
 
                 h4{
                     margin: 0 0 10px 0;
-                    color: #E60012;
+                    color: $nin-accent;
                     font-size: 14px;
                 }
 
                 label{
                     display: block;
-                    color: #E60012;
+                    color: $nin-accent;
                     font-size: 13px;
                     margin-bottom: 8px;
                     cursor: pointer;
@@ -1110,17 +1116,17 @@ body.nintendo-page{
                 padding: 10px 20px;
                 border: none;
                 border-radius: 6px;
-                background-color: #7a0008;
-                color: #E60012;
+                background-color: $nin-panel-bg;
+                color: $nin-accent;
                 font-weight: 700;
                 font-size: 18px;
                 cursor: pointer;
-                box-shadow: 0 0 5px #E600128d;
+                box-shadow: 0 0 5px $nin-accent8d;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 &:hover{
                     transform: translateY(-2px);
-                    box-shadow: 0 5px 30px rgba(230, 0, 18, 0.3);
+                    box-shadow: 0 5px 30px $nin-glow-soft;
                 }
             }
 
@@ -1131,23 +1137,23 @@ body.nintendo-page{
                 gap: 5px;            
                 padding: 10px;
                 border-radius: 8px;
-                background-color: #7a0008;
+                background-color: $nin-panel-bg;
                 width: fit-content;
                 cursor: pointer;
-                box-shadow: 0 0 10px #E60012;
+                box-shadow: 0 0 10px $nin-accent;
                 transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 02s ease;
 
                 &:hover {
                     transform: translateY(-3px);
-                    box-shadow: 0 0 15px rgba(230, 0, 18, 0.8);
+                    box-shadow: 0 0 15px $nin-glow-strong;
                 }
 
                 span.bar{
                     display: block;
                     height: 6px;
-                    background-color: #E60012;
+                    background-color: $nin-accent;
                     border-radius: 10px;
-                    box-shadow: 0 0 7px #E60012;
+                    box-shadow: 0 0 7px $nin-accent;
                 }
 
                 span.long{
@@ -1172,20 +1178,20 @@ body.nintendo-page{
 
             article.game-card {
                 text-align: center;
-                background-color: #7a0008;
+                background-color: $nin-panel-bg;
                 color: $x-font-color;
                 width: 100%;
                 max-width: 420px;
                 border-radius: 10px;
                 overflow: hidden;
-                box-shadow: 4px 4px 10px #E60012;
+                box-shadow: 4px 4px 10px $nin-accent;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 display: flex;
                 flex-direction: column;
 
                 &:hover {
                     transform: translateY(-10px);
-                    box-shadow: 0 15px 30px rgba(230, 0, 18, 0.3);
+                    box-shadow: 0 15px 30px $nin-glow-soft;
                 }
 
                 .game-info {
@@ -1199,7 +1205,7 @@ body.nintendo-page{
 
                     p.price {
                         font-weight: bold;
-                        color: #E60012;
+                        color: $nin-accent;
                         font-size: 1.2rem;
                     }
                 }
@@ -1224,10 +1230,10 @@ body.nintendo-page{
             background-color: $x-bg-color;
 
             section.modal-content{
-                background-color: #7a0008;
+                background-color: $nin-panel-bg;
                 margin: 15% auto;
                 padding: 20px;
-                border: 1px solid #E60012;
+                border: 1px solid $nin-accent;
                 width: 40%;
                 color: white;
 
@@ -1242,7 +1248,7 @@ body.nintendo-page{
                     width: 500px;
                     height: 300px;
                     border-radius: 10px;
-                    box-shadow: 0 0 10px #E60012;
+                    box-shadow: 0 0 10px $nin-accent;
                 }
 
                 button {
@@ -1254,12 +1260,12 @@ body.nintendo-page{
                     padding: 10px 20px;
                     border: none;
                     border-radius: 6px;
-                    background-color: #5a0006;
-                    color: #E60012;
+                    background-color: $nin-button-bg;
+                    color: $nin-accent;
                     font-weight: 700;
                     font-size: 18px;
                     cursor: pointer;
-                    box-shadow: 0 0 5px #E600128d;
+                    box-shadow: 0 0 5px $nin-accent8d;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     width: 100%;
                     max-width: 308px;
@@ -1274,11 +1280,13 @@ body.nintendo-page{
 
                     &:hover{
                         transform: translateY(-2px);
-                        box-shadow: 0 5px 30px rgba(230, 0, 18, 0.3);
+                        box-shadow: 0 5px 30px $nin-glow-soft;
                     }
                 }
             }
         }
     }
 }
+
+
 
