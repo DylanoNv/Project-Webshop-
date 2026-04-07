@@ -203,7 +203,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a href="pc.php">PC</a></li>
                 <li><a href="xbox.php">Xbox</a></li>
                 <li><a href="nintendo.php">Nintendo</a></li>
-                <li><a href="winkelmandje.php">Winkelmandje</a></li>
             </ul>
         </nav>
         <a href="winkelmandje.php"><img class="winkelmandje-img" src="img/Winkelmandje.png"></a>
