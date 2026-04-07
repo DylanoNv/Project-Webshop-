@@ -68,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: playstation.php?status=deleted");
         exit();
     }
+}
 ?>
 
 <!DOCTYPE html>
