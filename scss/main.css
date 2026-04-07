@@ -36,6 +36,28 @@ header .header-user-menu .btn-logout:hover {
   background-color: #c82333 !important;
 }
 
+/* Delete button styles */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.delete-form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 body.home-page {
   background-color: #121212;
 }
@@ -243,6 +265,7 @@ body.playstation-page main section.product-container article.game-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 body.playstation-page main section.product-container article.game-card:hover {
   transform: translateY(-10px);
