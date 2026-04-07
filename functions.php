@@ -382,6 +382,8 @@ function logoutUser() {
 }
 
 // Reviews ophalen
+// Dylano Nietveld
+
 function getReviews() {
     $conn = connectDb();
 
