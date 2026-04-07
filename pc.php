@@ -9,7 +9,8 @@ include_once 'functions.php';
 $userId = isLoggedIn() ? getCurrentUserId() : null;
 
 // Main
-$products = getData("products", "*", ['console_id' => 2]);
+$products = getData("products", "*", ['console_id' => 3]);
+$recommendedProducts = getRecommendedProducts(3);
 
 // Controleer of er gefilterd of gezocht is
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -128,6 +129,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php
         showProducts($products);
         ?>
+            <section style="margin-top: 60px; color: white;">
+    <h2>Aanbevolen PC games</h2>
+
+    <?php if (!empty($recommendedProducts)): ?>
+        <section class="product-container">
+            <?php foreach ($recommendedProducts as $product): ?>
+                <article class="game-card">
+                    <img class="game-img" src="img/games/<?php echo htmlspecialchars($product['foto']); ?>">
+                    <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+                    <p>Prijs: €<?php echo number_format($product['price'], 2, ',', '.'); ?></p>
+                </article>
+            <?php endforeach; ?>
+        </section>
+    <?php else: ?>
+        <p>Geen aanbevolen PC games gevonden.</p>
+    <?php endif; ?>
+    </section>
+        
 
         <section id="gameModal" class="game-modal">
             <section class="modal-content">
