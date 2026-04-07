@@ -72,7 +72,7 @@ include_once 'functions.php';
         </nav>
         <div class="header-user-menu">
             <?php if (isLoggedIn()): ?>
-                <span class="user-info">Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span>
+                <!-- <span class="user-info">Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span> -->
                 <a href="logout.php" class="btn-logout">Uitloggen</a>
             <?php else: ?>
                 <a href="login.php">Inloggen</a>

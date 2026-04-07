@@ -9,7 +9,46 @@
     padding: 0;
 }
 
+.header-user-menu {
+    position: absolute;
+    right: 100px;
+    top: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
+.header-user-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.header-user-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: white !important;
+    padding: 8px 15px !important;
+}
+
+.btn-logout:hover {
+    background-color: #c82333 !important;
+}
+
+.user-info {
+    font-size: 14px;
+    color: #666;
+}
+
+header {
+    position: relative;
+}
 
 // Home pagina
 body.home-page{

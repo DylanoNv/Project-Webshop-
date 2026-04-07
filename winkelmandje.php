@@ -264,7 +264,7 @@ $cartTotal = getCartTotal($userId);
             </ul>
         </nav>
         <div class="header-user-menu">
-            <span class="user-info">Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span>
+            <!-- <span class="user-info">Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span> -->
             <a href="logout.php" class="btn-logout">Uitloggen</a>
         </div>
         <a href="winkelmandje.php"><img class="winkelmandje-img" src="img/Winkelmandje.png"></a>
