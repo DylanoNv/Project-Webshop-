@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a class="selected-page" href="#">Nintendo</a></li>
             </ul>
         </nav>
-        <div class="header-user-menu">
+        <div id="headerUserMenu" class="header-user-menu">
             <?php if (isLoggedIn()): ?>
                 <!-- <span class="user-info">Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span> -->
                 <a href="logout.php" class="btn-logout">Uitloggen</a>
@@ -147,9 +147,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             document.getElementById('modalPrice').innerText = "Prijs: €" + price;
             document.getElementById('modalProductId').value = id;
             document.getElementById('gameModal').style.display = 'block';
+            document.getElementById('headerUserMenu').style.display = 'none';
         }
         function closeModal(){
             document.getElementById('gameModal').style.display = 'none';
+            document.getElementById('headerUserMeny').style.display = 'block';
             document.getElementById('modalImg').src = "";
         }
     </script>

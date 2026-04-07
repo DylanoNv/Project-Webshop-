@@ -14,7 +14,7 @@
 }
 
 .header-user-menu a {
-  color: #cfcfcf;
+  color: #333;
   text-decoration: none;
   font-size: 12px;
   padding: 4px 8px;
@@ -348,7 +348,7 @@ body.pc-page header {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   align-items: center;
-  background-color: #004500;
+  background-color: #5a2d00;
 }
 body.pc-page header nav ul {
   display: flex;
@@ -532,16 +532,6 @@ body.pc-page main section.product-container img.game-img {
   height: 250px;
   object-fit: cover;
   display: block;
-}
-@media (max-width: 1100px) {
-  body.pc-page main section.product-container {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-@media (max-width: 700px) {
-  body.pc-page main section.product-container {
-    grid-template-columns: 1fr;
-  }
 }
 @media (max-width: 1100px) {
   body.pc-page main section.product-container {
@@ -815,16 +805,6 @@ body.xbox-page main section.product-container img.game-img {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 1100px) {
-  body.xbox-page main section.product-container {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-@media (max-width: 700px) {
-  body.xbox-page main section.product-container {
-    grid-template-columns: 1fr;
-  }
-}
 body.xbox-page main section.game-modal {
   display: none;
   position: fixed;
@@ -863,7 +843,7 @@ body.xbox-page main section.game-modal section.modal-content button {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
-  background-color: #013e01;
+  background-color: #004500;
   color: #00FF00;
   font-weight: 700;
   font-size: 18px;
@@ -1076,16 +1056,6 @@ body.nintendo-page main section.product-container img.game-img {
   height: 250px;
   object-fit: cover;
   display: block;
-}
-@media (max-width: 1100px) {
-  body.nintendo-page main section.product-container {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-@media (max-width: 700px) {
-  body.nintendo-page main section.product-container {
-    grid-template-columns: 1fr;
-  }
 }
 @media (max-width: 1100px) {
   body.nintendo-page main section.product-container {
