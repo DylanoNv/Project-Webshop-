@@ -549,6 +549,8 @@ body.pc-page main section.game-modal section.modal-content span {
   font-size: 28px;
 }
 body.pc-page main section.game-modal section.modal-content img {
+  width: 500px;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 0 10px #00FF00;
 }
@@ -799,6 +801,8 @@ body.xbox-page main section.game-modal section.modal-content span {
   font-size: 28px;
 }
 body.xbox-page main section.game-modal section.modal-content img {
+  width: 500px;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 0 10px #00FF00;
 }
@@ -1049,6 +1053,8 @@ body.nintendo-page main section.game-modal section.modal-content span {
   font-size: 28px;
 }
 body.nintendo-page main section.game-modal section.modal-content img {
+  width: 500px;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 0 10px #00FF00;
 }
