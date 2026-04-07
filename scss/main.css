@@ -3,7 +3,11 @@
   padding: 0;
 }
 
-.header-user-menu {
+header .winkelmandje-img {
+  display: block;
+  margin-top: 20px;
+}
+header .header-user-menu {
   position: absolute;
   right: 20px;
   top: 8px;
@@ -12,42 +16,24 @@
   align-items: center;
   z-index: 2;
 }
-
-.header-user-menu a {
-  color: #333;
+header .header-user-menu a {
+  color: #f0f0f0;
   text-decoration: none;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 4px;
   transition: background-color 0.3s;
 }
-
-.header-user-menu a:hover {
-  background-color: #f0f0f0;
+header .header-user-menu a:hover {
+  background-color: #cb2eff;
 }
-
-.btn-logout {
+header .header-user-menu .btn-logout {
   background-color: #dc3545;
   color: white !important;
   padding: 6px 12px !important;
 }
-
-.btn-logout:hover {
+header .header-user-menu .btn-logout:hover {
   background-color: #c82333 !important;
-}
-
-.user-info {
-  font-size: 14px;
-  color: #666;
-}
-
-header {
-  position: relative;
-}
-
-.winkelmandje-img {
-  display: block;
-  margin-top: 40px;
 }
 
 body.home-page {

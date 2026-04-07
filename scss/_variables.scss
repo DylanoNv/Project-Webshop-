@@ -4,9 +4,10 @@ $home-nav-glow: #cb2eff;
 
 
 // Global variabelen
-$ui-text: #333;
+$ui-text: #f0f0f0;
 $ui-muted: #666;
-$ui-hover-bg: #f0f0f0;
+// $ui-hover-bg: #f0f0f0;
+$ui-hover-bg: $home-nav-glow;
 $btn-danger-bg: #dc3545;
 $btn-danger-hover-bg: #c82333;
 
