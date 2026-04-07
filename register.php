@@ -16,30 +16,28 @@ $success = '';
 
 // Handle registration
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['register'])) {
-        $username = trim($_POST['username'] ?? '');
-        $email = trim($_POST['email'] ?? '');
-        $password = trim($_POST['password'] ?? '');
-        $password_confirm = trim($_POST['password_confirm'] ?? '');
-        
-        // Validation
-        if (empty($username) || empty($email) || empty($password) || empty($password_confirm)) {
-            $error = 'Voer alstublieft alle velden in';
-        } elseif (strlen($username) < 3) {
-            $error = 'Gebruikersnaam moet minstens 3 tekens lang zijn';
-        } elseif (strlen($password) < 6) {
-            $error = 'Wachtwoord moet minstens 6 tekens lang zijn';
-        } elseif ($password !== $password_confirm) {
-            $error = 'Wachtwoord en bevestiging komen niet overeen';
+    $username = trim($_POST['username'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    $password_confirm = trim($_POST['password_confirm'] ?? '');
+    
+    // Validation
+    if (empty($username) || empty($email) || empty($password) || empty($password_confirm)) {
+        $error = 'Voer alstublieft alle velden in';
+    } elseif (strlen($username) < 3) {
+        $error = 'Gebruikersnaam moet minstens 3 tekens lang zijn';
+    } elseif (strlen($password) < 6) {
+        $error = 'Wachtwoord moet minstens 6 tekens lang zijn';
+    } elseif ($password !== $password_confirm) {
+        $error = 'Wachtwoord en bevestiging komen niet overeen';
+    } else {
+        $result = registerUser($username, $email, $password);
+        if ($result['success']) {
+            $success = $result['message'] . ' Je kunt nu inloggen.';
+            // Optioneel: automatisch inloggen
+            // header("Location: login.php");
         } else {
-            $result = registerUser($username, $email, $password);
-            if ($result['success']) {
-                $success = $result['message'] . ' Je kunt nu inloggen.';
-                // Optioneel: automatisch inloggen
-                // header("Location: login.php");
-            } else {
-                $error = $result['message'];
-            }
+            $error = $result['message'];
         }
     }
 }

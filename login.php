@@ -16,20 +16,18 @@ $success = '';
 
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['login'])) {
-        $username = trim($_POST['username'] ?? '');
-        $password = trim($_POST['password'] ?? '');
-        
-        if (empty($username) || empty($password)) {
-            $error = 'Voer alstublieft gebruikersnaam en wachtwoord in';
+    $username = trim($_POST['username'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    
+    if (empty($username) || empty($password)) {
+        $error = 'Voer alstublieft gebruikersnaam en wachtwoord in';
+    } else {
+        $result = loginUser($username, $password);
+        if ($result['success']) {
+            header("Location: index.php");
+            exit();
         } else {
-            $result = loginUser($username, $password);
-            if ($result['success']) {
-                header("Location: index.php");
-                exit();
-            } else {
-                $error = $result['message'];
-            }
+            $error = $result['message'];
         }
     }
 }
@@ -225,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <form method="POST">
                 <div class="form-group">
-                    <label for="username">Gebruikersnaam</label>
+                    <label for="username">Gebruikersnaam of email</label>
                     <input type="text" id="username" name="username" required>
                 </div>
                 

@@ -292,13 +292,13 @@ function registerUser($username, $email, $password) {
 function loginUser($username, $password) {
     $conn = connectDb();
     
-    // Find user by username
-    $sql = "SELECT id, username, password FROM users WHERE username = ?";
+    // Find user by username or email
+    $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$username]);
+    $stmt->execute([$username, $username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    error_log("Login attempt for user: $username");
+    error_log("Login attempt for user/email: $username");
     
     if (!$user) {
         error_log("User not found: $username");
