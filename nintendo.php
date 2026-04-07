@@ -115,7 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a href="pc.php">PC</a></li>
                 <li><a href="xbox.php">Xbox</a></li>
                 <li><a class="selected-page" href="#">Nintendo</a></li>
-                <li><a href="winkelmandje.php">Winkelmandje</a></li>
             </ul>
         </nav>
         <div class="header-user-menu">
