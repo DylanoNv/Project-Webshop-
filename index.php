@@ -15,54 +15,6 @@ include_once 'functions.php';
     <title>Home</title>
     <link rel="shortcut icon" href="img/homepage-picto.png" type="image/x-icon">
     <link rel="stylesheet" href="scss/main.css">
-        <style>
-        .header-user-menu {
-            position: absolute;
-            right: 20px;
-            top: 8px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            z-index: 2;
-        }
-        
-        .header-user-menu a {
-            color: #333;
-            text-decoration: none;
-            font-size: 12px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .header-user-menu a:hover {
-            background-color: #f0f0f0;
-        }
-        
-        .btn-logout {
-            background-color: #dc3545;
-            color: white !important;
-            padding: 6px 12px !important;
-        }
-        
-        .btn-logout:hover {
-            background-color: #c82333 !important;
-        }
-        
-        .user-info {
-            font-size: 12px;
-            color: #666;
-        }
-        
-        header {
-            position: relative;
-        }
-
-        .winkelmandje-img {
-            display: block;
-            margin-top: 40px;
-        }
-    </style>
 </head>
 <body class="home-page">
     <header>
@@ -97,4 +49,3 @@ include_once 'functions.php';
     </footer>
 </body>
 </html>
-
