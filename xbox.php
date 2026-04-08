@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         function closeModal(){
             document.getElementById('gameModal').style.display = 'none';
-            document.getElementById('headerUserMeny').style.display = 'block';
+            document.getElementById('headerUserMenu').style.display = 'block';
             document.getElementById('delGame').style.display = 'none';
             document.getElementById('modalImg').src = "";
         }
