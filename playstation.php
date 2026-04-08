@@ -40,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     }
-}
 
     // Voeg product toe aan wishlist
     if (isset($_POST['addToWish'])) {
@@ -70,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -172,6 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             document.getElementById('headerUserMeny').style.display = 'block';
             document.getElementById('modalImg').src = "";
         }
+            
     </script>
 </body>
 </html>

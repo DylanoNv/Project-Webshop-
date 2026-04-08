@@ -1044,6 +1044,7 @@ body.nintendo-page main section.product-container article.game-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 body.nintendo-page main section.product-container article.game-card:hover {
   transform: translateY(-10px);
