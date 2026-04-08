@@ -108,7 +108,7 @@ function showProducts($data) {
         
         // Add delete button if admin
         if (isAdmin()) {
-            echo "<form class='delete-form' action='' method='post' onsubmit='return confirm(\"Weet je zeker dat je dit product wilt verwijderen?\");'>";
+            echo "<form class='delete-form' action='' method='post' onsubmit='return confirm(\"Weet je zeker dat je dit product wilt verwijderen?\"); event.stopPropagation();'>";
             echo "<input type='hidden' name='product_id' value='" . htmlspecialchars($product['id']) . "'>";
             echo "<button type='submit' name='deletegame' class='delete-btn'>Verwijder</button>";
             echo "</form>";
