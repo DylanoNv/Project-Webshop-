@@ -333,6 +333,7 @@ body.playstation-page{
             width: 100%;
             height: 100%;
             background-color: $x-bg-color;
+            overflow-y: auto;
 
             section.modal-content{
                 background-color: $ps-panel-bg;
@@ -341,8 +342,6 @@ body.playstation-page{
                 border: 1px solid $ps-modal-border;
                 width: 40%;
                 color: white;
-                max-height: 70vh;
-                overflow-y: auto;
 
                 span{
                     float: right;
@@ -645,6 +644,7 @@ body.pc-page{
             width: 100%;
             height: 100%;
             background-color: $x-bg-color;
+            overflow-y: auto;
 
             section.modal-content{
                 background-color: $pc-panel-bg;
@@ -653,8 +653,6 @@ body.pc-page{
                 border: 1px solid $pc-accent;
                 width: 40%;
                 color: white;
-                max-height: 70vh;
-                overflow-y: auto;
 
                 span{
                     float: right;
@@ -954,6 +952,7 @@ body.xbox-page{
             width: 100%;
             height: 100%;
             background-color: $x-bg-color;
+            overflow-y: auto;
 
             section.modal-content{
                 background-color: $x-panel-bg;
@@ -962,8 +961,6 @@ body.xbox-page{
                 border: 1px solid $x-accent;
                 width: 40%;
                 color: white;
-                max-height: 70vh;
-                overflow-y: auto;
 
                 span{
                     float: right;
@@ -1263,6 +1260,7 @@ body.nintendo-page{
             width: 100%;
             height: 100%;
             background-color: $x-bg-color;
+            overflow-y: auto;
 
             section.modal-content{
                 background-color: $nin-panel-bg;
@@ -1271,8 +1269,6 @@ body.nintendo-page{
                 border: 1px solid $nin-accent;
                 width: 40%;
                 color: white;
-                max-height: 70vh;
-                overflow-y: auto;
 
                 span{
                     float: right;

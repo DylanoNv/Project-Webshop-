@@ -36,28 +36,6 @@ header .header-user-menu .btn-logout:hover {
   background-color: #c82333 !important;
 }
 
-/* Delete button styles */
-.delete-btn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: background-color 0.3s;
-}
-
-.delete-btn:hover {
-  background-color: #c82333;
-}
-
-.delete-form {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
 body.home-page {
   background-color: #121212;
 }
@@ -196,7 +174,6 @@ body.playstation-page main form.search-bar section.filter-content label {
   cursor: pointer;
 }
 body.playstation-page main form.search-bar section.filter-content label input {
-  width: -moz-fit-content;
   width: fit-content;
 }
 body.playstation-page main form.search-bar button {
@@ -223,7 +200,6 @@ body.playstation-page main form.search-bar section.filter-icon {
   padding: 10px;
   border-radius: 8px;
   background-color: #01243e;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 145, 255, 0.5529411765);
@@ -289,8 +265,7 @@ body.playstation-page main section.product-container article.game-card .game-inf
 body.playstation-page main section.product-container img.game-img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 body.playstation-page main section.game-modal {
@@ -302,6 +277,7 @@ body.playstation-page main section.game-modal {
   width: 100%;
   height: 100%;
   background-color: #121212;
+  overflow-y: auto;
 }
 body.playstation-page main section.game-modal section.modal-content {
   background-color: #01243e;
@@ -344,8 +320,7 @@ body.playstation-page main section.game-modal section.modal-content button {
 body.playstation-page main section.game-modal section.modal-content button img {
   width: 24px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   box-shadow: none;
   border-radius: 0px;
 }
@@ -453,7 +428,6 @@ body.pc-page main form.search-bar section.filter-content label {
   cursor: pointer;
 }
 body.pc-page main form.search-bar section.filter-content label input {
-  width: -moz-fit-content;
   width: fit-content;
 }
 body.pc-page main form.search-bar button {
@@ -480,7 +454,6 @@ body.pc-page main form.search-bar section.filter-icon {
   padding: 10px;
   border-radius: 8px;
   background-color: #5a2d00;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
   box-shadow: 0 0 10px #FF8C00;
@@ -546,8 +519,7 @@ body.pc-page main section.product-container article.game-card .game-info p.price
 body.pc-page main section.product-container img.game-img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 @media (max-width: 1100px) {
@@ -569,6 +541,7 @@ body.pc-page main section.game-modal {
   width: 100%;
   height: 100%;
   background-color: #121212;
+  overflow-y: auto;
 }
 body.pc-page main section.game-modal section.modal-content {
   background-color: #5a2d00;
@@ -611,8 +584,7 @@ body.pc-page main section.game-modal section.modal-content button {
 body.pc-page main section.game-modal section.modal-content button img {
   width: 24px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   box-shadow: none;
   border-radius: 0px;
 }
@@ -720,7 +692,6 @@ body.xbox-page main form.search-bar section.filter-content label {
   cursor: pointer;
 }
 body.xbox-page main form.search-bar section.filter-content label input {
-  width: -moz-fit-content;
   width: fit-content;
 }
 body.xbox-page main form.search-bar button {
@@ -747,7 +718,6 @@ body.xbox-page main form.search-bar section.filter-icon {
   padding: 10px;
   border-radius: 8px;
   background-color: #004500;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
   box-shadow: 0 0 10px #00FF00;
@@ -813,8 +783,7 @@ body.xbox-page main section.product-container article.game-card .game-info p.pri
 body.xbox-page main section.product-container img.game-img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 @media (max-width: 1100px) {
@@ -836,6 +805,7 @@ body.xbox-page main section.game-modal {
   width: 100%;
   height: 100%;
   background-color: #121212;
+  overflow-y: auto;
 }
 body.xbox-page main section.game-modal section.modal-content {
   background-color: #004500;
@@ -878,8 +848,7 @@ body.xbox-page main section.game-modal section.modal-content button {
 body.xbox-page main section.game-modal section.modal-content button img {
   width: 24px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   box-shadow: none;
   border-radius: 0px;
 }
@@ -912,11 +881,11 @@ body.nintendo-page header nav ul li a {
 }
 body.nintendo-page header nav ul li a:hover {
   transform: translateY(-2px);
-  text-shadow: 0 0 15px #E60012;
+  text-shadow: 0 0 15px #ffffff;
 }
 body.nintendo-page header nav ul li a.selected-page {
   font-weight: 900;
-  text-shadow: 2px 2px 20px #E60012;
+  text-shadow: 2px 2px 20px #ffffff;
 }
 body.nintendo-page header .logo {
   width: 100px;
@@ -943,7 +912,7 @@ body.nintendo-page main form.search-bar input {
   background: #7a0008;
   color: white;
   min-width: 220px;
-  box-shadow: 0 0 5px #E60012;
+  box-shadow: 0 0 5px #ffffff;
   width: 600px;
   height: 20px;
   outline: none;
@@ -953,7 +922,7 @@ body.nintendo-page main form.search-bar input {
 body.nintendo-page main form.search-bar input:focus {
   border-color: rgba(230, 0, 18, 0.5529411765);
   transform: translateY(-5px);
-  box-shadow: 0 5px 30px #E60012;
+  box-shadow: 0 5px 30px #ffffff;
 }
 body.nintendo-page main form.search-bar section.filter-wrapper {
   position: relative;
@@ -969,25 +938,24 @@ body.nintendo-page main form.search-bar section.filter-content {
   top: 40px;
   background-color: #7a0008;
   min-width: 200px;
-  box-shadow: 0 8px 16px #E60012;
+  box-shadow: 0 8px 16px #ffffff;
   padding: 15px;
   z-index: 99;
   border-radius: 5px;
 }
 body.nintendo-page main form.search-bar section.filter-content h4 {
   margin: 0 0 10px 0;
-  color: #E60012;
+  color: #ffffff;
   font-size: 14px;
 }
 body.nintendo-page main form.search-bar section.filter-content label {
   display: block;
-  color: #E60012;
+  color: #ffffff;
   font-size: 13px;
   margin-bottom: 8px;
   cursor: pointer;
 }
 body.nintendo-page main form.search-bar section.filter-content label input {
-  width: -moz-fit-content;
   width: fit-content;
 }
 body.nintendo-page main form.search-bar button {
@@ -995,7 +963,7 @@ body.nintendo-page main form.search-bar button {
   border: none;
   border-radius: 6px;
   background-color: #7a0008;
-  color: #E60012;
+  color: #ffffff;
   font-weight: 700;
   font-size: 18px;
   cursor: pointer;
@@ -1014,10 +982,9 @@ body.nintendo-page main form.search-bar section.filter-icon {
   padding: 10px;
   border-radius: 8px;
   background-color: #7a0008;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
-  box-shadow: 0 0 10px #E60012;
+  box-shadow: 0 0 10px #ffffff;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 2s ease;
 }
 body.nintendo-page main form.search-bar section.filter-icon:hover {
@@ -1027,9 +994,9 @@ body.nintendo-page main form.search-bar section.filter-icon:hover {
 body.nintendo-page main form.search-bar section.filter-icon span.bar {
   display: block;
   height: 6px;
-  background-color: #E60012;
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 0 7px #E60012;
+  box-shadow: 0 0 7px #ffffff;
 }
 body.nintendo-page main form.search-bar section.filter-icon span.long {
   width: 37px;
@@ -1054,7 +1021,7 @@ body.nintendo-page main section.product-container article.game-card {
   max-width: 420px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 4px 4px 10px #E60012;
+  box-shadow: 4px 4px 10px #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -1074,14 +1041,13 @@ body.nintendo-page main section.product-container article.game-card .game-info h
 }
 body.nintendo-page main section.product-container article.game-card .game-info p.price {
   font-weight: bold;
-  color: #E60012;
+  color: #ffffff;
   font-size: 1.2rem;
 }
 body.nintendo-page main section.product-container img.game-img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 @media (max-width: 1100px) {
@@ -1103,12 +1069,13 @@ body.nintendo-page main section.game-modal {
   width: 100%;
   height: 100%;
   background-color: #121212;
+  overflow-y: auto;
 }
 body.nintendo-page main section.game-modal section.modal-content {
   background-color: #7a0008;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #E60012;
+  border: 1px solid #ffffff;
   width: 40%;
   color: white;
 }
@@ -1121,7 +1088,7 @@ body.nintendo-page main section.game-modal section.modal-content img {
   width: 500px;
   height: 300px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #E60012;
+  box-shadow: 0 0 10px #ffffff;
 }
 body.nintendo-page main section.game-modal section.modal-content button {
   display: flex;
@@ -1133,7 +1100,7 @@ body.nintendo-page main section.game-modal section.modal-content button {
   border: none;
   border-radius: 6px;
   background-color: #5a0006;
-  color: #E60012;
+  color: #ffffff;
   font-weight: 700;
   font-size: 18px;
   cursor: pointer;
@@ -1145,12 +1112,13 @@ body.nintendo-page main section.game-modal section.modal-content button {
 body.nintendo-page main section.game-modal section.modal-content button img {
   width: 24px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   box-shadow: none;
   border-radius: 0px;
 }
 body.nintendo-page main section.game-modal section.modal-content button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 30px rgba(230, 0, 18, 0.3);
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
