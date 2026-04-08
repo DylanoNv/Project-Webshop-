@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: xbox.php?status=deleted");
         exit();
     }
+}
 ?>
 
 <!DOCTYPE html>

@@ -49,28 +49,6 @@ header{
     }
 }
 
-// Delete button styles
-.delete-btn {
-    background-color: $btn-danger-bg;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s;
-}
-
-.delete-btn:hover {
-    background-color: $btn-danger-hover-bg;
-}
-
-.delete-form {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
 // Home pagina
 body.home-page{
     background-color: $x-bg-color;
