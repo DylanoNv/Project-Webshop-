@@ -146,6 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "
                             <button id='delGame' name='deletegame' type='submit' class='delete-btn'>
                                 Verwijder game
+                                <span>🗑️</span>
                             </button>
                         ";
                     }
