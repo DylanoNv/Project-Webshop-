@@ -169,11 +169,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             document.getElementById('modalPrice').innerText = "Prijs: €" + price;
             document.getElementById('modalProductId').value = id;
             document.getElementById('gameModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
             document.getElementById('headerUserMenu').style.display = 'none';
             document.getElementById('delGame').style.display = 'block';
         }
         function closeModal(){
             document.getElementById('gameModal').style.display = 'none';
+            document.body.style.overflow = '';
             document.getElementById('headerUserMenu').style.display = 'block';
             document.getElementById('delGame').style.display = 'none';
             document.getElementById('modalImg').src = "";

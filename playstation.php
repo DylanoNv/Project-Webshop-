@@ -165,10 +165,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             document.getElementById('modalPrice').innerText = "Prijs: €" + price;
             document.getElementById('modalProductId').value = id;
             document.getElementById('gameModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
             document.getElementById('headerUserMenu').style.display = 'none';
         }
         function closeModal(){
             document.getElementById('gameModal').style.display = 'none';
+            document.body.style.overflow = '';
             document.getElementById('headerUserMeny').style.display = 'block';
             document.getElementById('modalImg').src = "";
         }
