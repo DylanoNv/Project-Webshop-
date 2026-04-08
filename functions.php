@@ -105,15 +105,6 @@ function showProducts($data) {
         echo "<img class='game-img' src='" . $fotoPad . "'>";
         echo "<h3>" . htmlspecialchars($product['name']) . "</h3>";
         echo "<p>Prijs: €" . number_format($product['price'], 2, ',', '.') . "</p>";
-        
-        // Add delete button if admin
-        if (isAdmin()) {
-            echo "<form class='delete-form' action='' method='post' onsubmit='return confirm(\"Weet je zeker dat je dit product wilt verwijderen?\"); event.stopPropagation();'>";
-            echo "<input type='hidden' name='product_id' value='" . htmlspecialchars($product['id']) . "'>";
-            echo "<button type='submit' name='deletegame' class='delete-btn'>Verwijder</button>";
-            echo "</form>";
-        }
-        
         echo "</article>";
     }
     echo "</section>";

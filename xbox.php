@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php
                     if(isAdmin()) {
                         echo "
-                            <button name='deletegame' type='submit' class='delete-btn'>
+                            <button id='delGame' name='deletegame' type='submit' class='delete-btn'>
                                 Verwijder game
                             </button>
                         ";
@@ -170,10 +170,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             document.getElementById('modalProductId').value = id;
             document.getElementById('gameModal').style.display = 'block';
             document.getElementById('headerUserMenu').style.display = 'none';
+            document.getElementById('delGame').style.display = 'block';
         }
         function closeModal(){
             document.getElementById('gameModal').style.display = 'none';
             document.getElementById('headerUserMeny').style.display = 'block';
+            document.getElementById('delGame').style.display = 'none';
             document.getElementById('modalImg').src = "";
         }
     </script>
