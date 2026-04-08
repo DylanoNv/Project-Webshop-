@@ -39,10 +39,7 @@ include_once 'functions.php';
         </div>
         <a href="winkelmandje.php"><img class="winkelmandje-img" src="img/Winkelmandje.png"></a>
     </header>
-
     
-                // Dylano Nietveld
-                // Reviews weergeven en toevoegen
     <main>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
