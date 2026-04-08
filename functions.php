@@ -380,4 +380,72 @@ function logoutUser() {
     session_destroy();
     $_SESSION = [];
 }
+
+// Reviews ophalen
+// Dylano Nietveld
+
+function getReviews() {
+    $conn = connectDb();
+
+    $sql = "SELECT r.*, u.username 
+            FROM reviews r
+            JOIN users u ON r.user_id = u.id
+            ORDER BY r.created_at DESC";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Review toevoegen
+function addReview($userId, $review, $rating) {
+    $conn = connectDb();
+
+    $sql = "INSERT INTO reviews (user_id, review, rating) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+
+    return $stmt->execute([$userId, $review, $rating]);
+}
+
+// Review verwijderen
+function deleteReview($reviewId, $userId) {
+    $conn = connectDb();
+
+    $sql = "DELETE FROM reviews WHERE id = ? AND user_id = ?";
+    $stmt = $conn->prepare($sql);
+
+    return $stmt->execute([$reviewId, $userId]);
+}
+
+// Review ophalen op id
+function getReviewById($reviewId, $userId) {
+    $conn = connectDb();
+
+    $sql = "SELECT * FROM reviews WHERE id = ? AND user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$reviewId, $userId]);
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Review aanpassen
+function updateReview($reviewId, $userId, $review, $rating) {
+    $conn = connectDb();
+
+    $sql = "UPDATE reviews SET review = ?, rating = ? WHERE id = ? AND user_id = ?";
+    $stmt = $conn->prepare($sql);
+
+    return $stmt->execute([$review, $rating, $reviewId, $userId]);
+}
+
+// Aanbevolen games ophalen
+function getRecommendedProducts($consoleId) {
+    return getData("products", "*", [
+        'console_id' => $consoleId,
+        'aanbevolen' => 1
+    ]);
+}
+
 ?>
+
