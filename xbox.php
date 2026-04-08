@@ -141,15 +141,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Voeg toe aan wishlist
                         <img src="img/Add_to_wishlist.png" alt="Wishlist">
                     </button>
-                    <?php
-                    if(isAdmin()) {
-                        echo "
                             <button id='delGame' name='deletegame' type='submit' class='delete-btn'>
                                 Verwijder game
                             </button>
-                        ";
-                    }
-                    ?>
                 </form>
             </section>
         </section>
