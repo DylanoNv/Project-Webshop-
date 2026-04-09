@@ -9,7 +9,7 @@ include_once 'functions.php';
 $userId = isLoggedIn() ? getCurrentUserId() : null;
 
 // Main
-$products = getData("products", "*", ['console_id' => 3]);
+$products = getData("products", "*", ['console_id' => 2]);
 $recommendedProducts = getRecommendedProducts(3);
 
 // Controleer of er gefilterd of gezocht is
