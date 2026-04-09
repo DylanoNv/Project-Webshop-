@@ -10,6 +10,35 @@ if (session_status() === PHP_SESSION_NONE) {
 // Koppelen van configuratiebestand
 include_once 'config.php';
 
+// Sessietime-out op basis van inactiviteit (geldt voor alle gebruikers, incl. admin)
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY']) > SESSION_TIMEOUT_SECONDS) {
+    session_unset();
+    session_destroy();
+    // Nieuwe sessie starten zodat latere sessie-reads geen warnings geven
+    session_start();
+    $_SESSION['timed_out'] = 1;
+    $_SESSION['LAST_ACTIVITY'] = time();
+    header("Location: " . $_SERVER['REQUEST_URI']);
+    exit();
+}
+$_SESSION['LAST_ACTIVITY'] = time();
+
+// Toon een eenmalige melding als de sessie verlopen is
+function renderTimeoutMessage() {
+    if (!empty($_SESSION['timed_out'])) {
+        unset($_SESSION['timed_out']);
+        echo "<div class='session-timeout-message' role='status' aria-live='polite'>";
+        echo "Je bent automatisch uitgelogd vanwege inactiviteit. Log opnieuw in om verder te gaan.";
+        echo "</div>";
+        echo "<script>";
+        echo "setTimeout(function(){";
+        echo "var el = document.querySelector('.session-timeout-message');";
+        echo "if (el) { el.classList.add('is-hidden'); }";
+        echo "}, 5000);";
+        echo "</script>";
+    }
+}
+
 // Main
 // Verbinden met database
 function connectDb(){

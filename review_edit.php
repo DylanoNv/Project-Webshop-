@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body>
+    <?php renderTimeoutMessage(); ?>
     <main style="padding: 40px;">
         <h1>Review aanpassen</h1>
 

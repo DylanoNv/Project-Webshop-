@@ -204,6 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+    <?php renderTimeoutMessage(); ?>
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>

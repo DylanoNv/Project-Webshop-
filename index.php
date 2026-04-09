@@ -17,6 +17,7 @@ include_once 'functions.php';
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body class="home-page">
+    <?php renderTimeoutMessage(); ?>
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>

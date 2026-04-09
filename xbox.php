@@ -78,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body class="xbox-page">
+    <?php renderTimeoutMessage(); ?>
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>

@@ -52,6 +52,7 @@ $cartTotal = getCartTotal($userId);
     <link rel="stylesheet" href="scss/main.css?v=1">
 </head>
 <body class="cart-page">
+    <?php renderTimeoutMessage(); ?>
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>
