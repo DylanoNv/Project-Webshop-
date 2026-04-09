@@ -379,9 +379,9 @@ function getReviews() {
     $conn = connectDb();
 
     $sql = "SELECT r.*, u.username 
-            FROM reviews r
-            JOIN users u ON r.user_id = u.id
-            ORDER BY r.created_at DESC";
+        FROM reviews r
+        JOIN users u ON r.user_id = u.id
+        ORDER BY r.id DESC";
 
     $stmt = $conn->prepare($sql);
     $stmt->execute();
