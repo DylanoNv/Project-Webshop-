@@ -10,6 +10,7 @@ $userId = isLoggedIn() ? getCurrentUserId() : null;
 
 // Main
 $products = getData("products", "*", ['console_id' => 3]);
+$recommendedProducts = getRecommendedProducts(3);
 
 // Controleer of er gefilterd of gezocht is
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
