@@ -102,7 +102,7 @@ $reviews = getReviews();
                 <div style="background: #2a3261; padding: 15px; margin-bottom: 15px; border-radius: 8px;">
                     <strong><?php echo htmlspecialchars($review['username']); ?></strong><br>
                     <small>Rating: <?php echo $review['rating']; ?>/5</small>
-                    <p style="margin: 10px 0;"><?php echo nl2br(htmlspecialchars($review['review'])); ?></p>
+                    <p style="margin: 10px 0;"><?php echo nl2br(htmlspecialchars($review['comment'])); ?></p>
 
                     <?php if (isLoggedIn() && getCurrentUserId() == $review['user_id']): ?>
                         <a href="review_edit.php?id=<?php echo $review['id']; ?>" style="color: #caa6ff;">Wijzig</a>

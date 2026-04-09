@@ -1,7 +1,7 @@
+<?php
 // Dylano Nietveld
 // Review aanpassen
 
-<?php
 include_once 'functions.php';
 
 if (!isLoggedIn()) {
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <p>
                 <label>Review</label><br>
-                <textarea name="review" rows="6" cols="50"><?php echo htmlspecialchars($reviewData['review']); ?></textarea>
+                <textarea name="review" rows="6" cols="50"><?php echo htmlspecialchars($reviewData['comment']); ?></textarea>
             </p>
 
             <button type="submit">Opslaan</button>
