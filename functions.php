@@ -379,9 +379,9 @@ function getReviews() {
     $conn = connectDb();
 
     $sql = "SELECT r.*, u.username 
-        FROM reviews r
-        JOIN users u ON r.user_id = u.id
-        ORDER BY r.id DESC";
+            FROM reviews r
+            JOIN users u ON r.user_id = u.id
+            ORDER BY r.id DESC";
 
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -393,10 +393,10 @@ function getReviews() {
 function addReview($userId, $review, $rating) {
     $conn = connectDb();
 
-    $sql = "INSERT INTO reviews (user_id, review, rating) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO reviews (user_id, product_id, rating, comment) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
-    return $stmt->execute([$userId, $review, $rating]);
+    return $stmt->execute([$userId, 5, $rating, $review]);
 }
 
 // Review verwijderen
@@ -424,7 +424,7 @@ function getReviewById($reviewId, $userId) {
 function updateReview($reviewId, $userId, $review, $rating) {
     $conn = connectDb();
 
-    $sql = "UPDATE reviews SET review = ?, rating = ? WHERE id = ? AND user_id = ?";
+    $sql = "UPDATE reviews SET comment = ?, rating = ? WHERE id = ? AND user_id = ?";
     $stmt = $conn->prepare($sql);
 
     return $stmt->execute([$review, $rating, $reviewId, $userId]);
