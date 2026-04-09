@@ -49,7 +49,7 @@ $cartTotal = getCartTotal($userId);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winkelmandje</title>
     <link rel="shortcut icon" href="img/homepage-picto.png" type="image/x-icon">
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="scss/main.css?v=1">
 </head>
 <body class="cart-page">
     <header>
