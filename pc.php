@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php
         showProducts($products);
         ?>
-            <section style="margin-top: 60px; color: white;">
+            <section class="game-section">
     <h2 class="recommended-h2">Aanbevolen PC games</h2>
 
     <?php if (!empty($recommendedProducts)): ?>

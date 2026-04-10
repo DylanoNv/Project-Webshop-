@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <?php renderTimeoutMessage(); ?>
-    <main style="padding: 40px;">
+    <main class="edit-main">
         <h1>Review aanpassen</h1>
 
         <form method="post">
