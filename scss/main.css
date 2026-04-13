@@ -45,9 +45,7 @@ header .wishlist-img {
   width: 45px;
 }
 header .header-user-menu {
-  position: absolute;
-  right: 20px;
-  top: 8px;
+  position: static;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -77,8 +75,8 @@ body.home-page {
   background-color: #121212;
 }
 body.home-page header {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #5b008d;
 }
@@ -116,8 +114,8 @@ body.playstation-page {
   background-color: #121212;
 }
 body.playstation-page header {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #00439C;
 }
@@ -370,8 +368,8 @@ body.pc-page {
   background-color: #121212;
 }
 body.pc-page header {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #5a2d00;
 }
@@ -634,8 +632,8 @@ body.xbox-page {
   background-color: #121212;
 }
 body.xbox-page header {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #004500;
 }
@@ -898,8 +896,8 @@ body.nintendo-page {
   background-color: #121212;
 }
 body.nintendo-page header {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #7a0008;
 }
@@ -1164,8 +1162,8 @@ body.cart-page {
 }
 
 body.cart-page header {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   padding: 20px 5%;
