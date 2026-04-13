@@ -476,12 +476,15 @@ function getRecommendedProducts($consoleId) {
     ]);
 }
 
-function wishlistbutton($productId, $userId) {
-    if (addToWishlist($productId, $userId)) {
-        echo "<script>alert('Product toegevoegd aan je verlanglijst!');</script>";
-    } else {
-        echo "<script>alert('Product staat al op je verlanglijst!');</script>";
+function wishlistbutton($productId, $userId = null) {
+    if (!$userId) {
+        $userId = getCurrentUserId();
     }
+    if (!$userId || !isLoggedIn()) {
+        return false;
+    }
+    
+    return addToWishlist($productId, $userId);
 }
 
 function getWishlistItems($userId) {
