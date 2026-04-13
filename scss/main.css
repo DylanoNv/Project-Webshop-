@@ -1651,3 +1651,13 @@ body.auth-page footer {
 .edit-main {
     padding: 40px;
 }
+
+/* Checkout success page styles */
+.checkout-success-container {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    text-align: center;
+}
