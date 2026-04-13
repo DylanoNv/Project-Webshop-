@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Handle quantity update
     if (isset($_POST['update-quantity'])) {
         $cartId = isset($_POST['cart-id']) ? intval($_POST['cart-id']) : 0;
         $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 0;
@@ -35,9 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Handle checkout
     if (isset($_POST['checkout'])) {
         if (checkoutCart($userId)) {
-            header("Location: winkelmandje.php?status=checkout_success");
+            header("Location: afgerekend.php");
             exit();
         } else {
             header("Location: winkelmandje.php?status=checkout_empty");
@@ -85,9 +87,7 @@ $cartTotal = getCartTotal($userId);
         <div class="cart-container">
             <h1>Mijn Winkelmandje</h1>
 
-            <?php if (isset($_GET['status']) && $_GET['status'] === 'checkout_success'): ?>
-                <p>Bestelling geplaatst! Winkelmand leeg.</p>
-            <?php elseif (isset($_GET['status']) && $_GET['status'] === 'checkout_empty'): ?>
+            <?php if (isset($_GET['status']) && $_GET['status'] === 'checkout_empty'): ?>
                 <p>Winkelmand is leeg.</p>
             <?php endif; ?>
             
