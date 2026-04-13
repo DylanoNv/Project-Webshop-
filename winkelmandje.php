@@ -68,6 +68,7 @@ $cartTotal = getCartTotal($userId);
             <!-- <span class="user-info">Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span> -->
             <a href="logout.php" class="btn-logout">Uitloggen</a>
         </div>
+        <a href="wishlist.php"><img class="wishlist-img" src="img/Add_to_wishlist.png" alt="Wishlist"></a>
         <a href="winkelmandje.php"><img class="winkelmandje-img" src="img/Winkelmandje.png"></a>
     </header>
 
