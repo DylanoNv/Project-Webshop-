@@ -438,5 +438,23 @@ function getRecommendedProducts($consoleId) {
     ]);
 }
 
+function wishlistbutton($productId, $userId) {
+    if (addToWishlist($productId, $userId)) {
+        echo "<script>alert('Product toegevoegd aan je verlanglijst!');</script>";
+    } else {
+        echo "<script>alert('Product staat al op je verlanglijst!');</script>";
+    }
+}
+
+function getwishlistitems($userId) {
+    $conn = connectDb();
+
+    $sql = "SELECT * FROM wishlist WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$userId]);
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 ?>
 
