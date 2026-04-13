@@ -267,6 +267,17 @@ function removeFromCart($cartId) {
     return $stmt->execute([$cartId]);
 }
 
+// Leeg winkelmand na afrekenen
+function checkoutCart($userId) {
+    $cartItems = getCartItems($userId);
+
+    if (empty($cartItems)) {
+        return false;
+    }
+
+    return clearCart($userId);
+}
+
 // Remove item from wishlist
 function removeFromWishlist($wishlistId) {
     $conn = connectDb();
