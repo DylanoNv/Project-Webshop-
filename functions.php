@@ -267,6 +267,15 @@ function removeFromCart($cartId) {
     return $stmt->execute([$cartId]);
 }
 
+// Remove item from wishlist
+function removeFromWishlist($wishlistId) {
+    $conn = connectDb();
+    
+    $sql = "DELETE FROM wishlist WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    return $stmt->execute([$wishlistId]);
+}
+
 // Update cart quantity
 function updateCartQuantity($cartId, $quantity) {
     $conn = connectDb();
@@ -475,13 +484,18 @@ function wishlistbutton($productId, $userId) {
     }
 }
 
-function getwishlistitems($userId) {
+function getWishlistItems($userId) {
     $conn = connectDb();
-
-    $sql = "SELECT * FROM wishlist WHERE user_id = ?";
+    
+    $sql = "SELECT w.id, w.product_id, p.name, p.price, p.foto 
+            FROM wishlist w 
+            JOIN products p ON w.product_id = p.id 
+            WHERE w.user_id = ?
+            ORDER BY w.id DESC";
+    
     $stmt = $conn->prepare($sql);
     $stmt->execute([$userId]);
-
+    
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 

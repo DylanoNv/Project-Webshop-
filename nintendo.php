@@ -98,6 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="register.php">Registreren</a>
             <?php endif; ?>
         </div>
+        <?php if (isLoggedIn()): ?>
+            <a href="wishlist.php"><img class="wishlist-img" src="img/Add_to_wishlist.png" alt="Wishlist"></a>
+        <?php endif; ?>
         <a href="winkelmandje.php"><img class="winkelmandje-img" src="img/Winkelmandje.png"></a>
     </header>
 

@@ -47,6 +47,12 @@ header{
         margin-top: 20px;
     }
 
+    .wishlist-img {
+        display: block;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+
     .header-user-menu{
         position: absolute;
         right: 20px;
@@ -124,6 +130,11 @@ body.home-page{
             width: $x-nav-img-size;
             justify-self: end;
         }
+
+        .wishlist-img{
+            width: $x-nav-img-size;
+            justify-self: end;
+        }
     }
 }
 
@@ -170,6 +181,11 @@ body.playstation-page{
         }
 
         .winkelmandje-img{
+            width: $x-nav-img-size;
+            justify-self: end;
+        }
+
+        .wishlist-img{
             width: $x-nav-img-size;
             justify-self: end;
         }
@@ -469,6 +485,11 @@ body.pc-page{
         }
 
         .winkelmandje-img{
+            width: $x-nav-img-size;
+            justify-self: end;
+        }
+
+        .wishlist-img{
             width: $x-nav-img-size;
             justify-self: end;
         }
@@ -777,6 +798,11 @@ body.xbox-page{
         }
 
         .winkelmandje-img{
+            width: $x-nav-img-size;
+            justify-self: end;
+        }
+
+        .wishlist-img{
             width: $x-nav-img-size;
             justify-self: end;
         }
