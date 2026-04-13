@@ -24,14 +24,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     }
-    
-    // Handle quantity update
+
     if (isset($_POST['update-quantity'])) {
         $cartId = isset($_POST['cart-id']) ? intval($_POST['cart-id']) : 0;
         $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 0;
         if ($cartId > 0 && $quantity > 0) {
             updateCartQuantity($cartId, $quantity);
             header("Location: winkelmandje.php?status=updated");
+            exit();
+        }
+    }
+
+    if (isset($_POST['checkout'])) {
+        if (checkoutCart($userId)) {
+            header("Location: winkelmandje.php?status=checkout_success");
+            exit();
+        } else {
+            header("Location: winkelmandje.php?status=checkout_empty");
             exit();
         }
     }
