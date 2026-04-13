@@ -17,6 +17,7 @@ include_once 'functions.php';
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body class="home-page">
+    <?php renderTimeoutMessage(); ?>
     <header>
         <img class="logo" src="img/Logo.png">
         <nav>
@@ -65,27 +66,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $reviews = getReviews();
 ?>
 
-<section style="max-width: 1100px; margin: 60px auto; display: flex; gap: 60px; align-items: flex-start; color: white;">
+<section class="review-section">
     
-    <section style="flex: 1; background: #1d254a; padding: 25px; border-radius: 10px;">
-        <h2 style="margin-top: 0;">Laat een review achter</h2>
+    <section class="review-form">
+        <h2 class="review-title">Laat een review achter</h2>
 
         <?php if (isLoggedIn()): ?>
             <form method="post">
                 <p>
                     <label>Rating (1 t/m 5)</label><br>
-                    <input type="number" name="rating" min="1" max="5" required
-                        style="width: 100%; max-width: 120px; padding: 10px; margin-top: 8px;">
+                    <input type="number" name="rating" min="1" max="5" required class="rating-input">
                 </p>
 
                 <p>
                     <label>Review</label><br>
-                    <textarea name="review" rows="6" placeholder="Schrijf hier je review..." required
-                        style="width: 100%; padding: 10px; margin-top: 8px; resize: none;"></textarea>
+                    <textarea name="review" rows="6" placeholder="Schrijf hier je review..." required class="review-textarea"></textarea>
                 </p>
 
-                <button type="submit" name="add_review"
-                    style="padding: 10px 20px; background: #8a2be2; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                <button type="submit" name="add_review" class="submit-btn">
                     Verstuur
                 </button>
             </form>
@@ -94,23 +92,22 @@ $reviews = getReviews();
         <?php endif; ?>
     </section>
 
-    <section style="width: 380px; background: #1d254a; padding: 25px; border-radius: 10px;">
-        <h2 style="margin-top: 0;">Recente reviews</h2>
+    <section class="recent-reviews">
+        <h2 class="review-title">Recente reviews</h2>
 
         <?php if (!empty($reviews)): ?>
             <?php foreach ($reviews as $review): ?>
-                <div style="background: #2a3261; padding: 15px; margin-bottom: 15px; border-radius: 8px;">
+                <div class="review-item">
                     <strong><?php echo htmlspecialchars($review['username']); ?></strong><br>
                     <small>Rating: <?php echo $review['rating']; ?>/5</small>
-                    <p style="margin: 10px 0;"><?php echo nl2br(htmlspecialchars($review['comment'])); ?></p>
+                    <p class="review-comment"><?php echo nl2br(htmlspecialchars($review['comment'])); ?></p>
 
                     <?php if (isLoggedIn() && getCurrentUserId() == $review['user_id']): ?>
-                        <a href="review_edit.php?id=<?php echo $review['id']; ?>" style="color: #caa6ff;">Wijzig</a>
+                        <a href="review_edit.php?id=<?php echo $review['id']; ?>" class="edit-link">Wijzig</a>
 
-                        <form method="post" style="display:inline;">
+                        <form method="post" class="inline-form">
                             <input type="hidden" name="review_id" value="<?php echo $review['id']; ?>">
-                            <button type="submit" name="delete_review"
-                                style="background:none; border:none; color:#ff9db0; cursor:pointer;">
+                            <button type="submit" name="delete_review" class="delete-btn">
                                 Verwijder
                             </button>
                         </form>

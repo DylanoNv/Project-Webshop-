@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 08, 2026 at 08:24 AM
--- Server version: 8.0.40
--- PHP Version: 8.3.30
+-- Host: 127.0.0.1
+-- Gegenereerd op: 09 apr 2026 om 14:22
+-- Serverversie: 10.4.32-MariaDB
+-- PHP-versie: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,30 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Tabelstructuur voor tabel `cart`
 --
 
 CREATE TABLE `cart` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `product_id` int NOT NULL,
-  `quantity` int NOT NULL
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Tabelstructuur voor tabel `categories`
 --
 
 CREATE TABLE `categories` (
-  `id` int NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `age_rating` int NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `age_rating` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Gegevens worden geëxporteerd voor tabel `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `age_rating`) VALUES
@@ -60,16 +60,16 @@ INSERT INTO `categories` (`id`, `name`, `age_rating`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consoles`
+-- Tabelstructuur voor tabel `consoles`
 --
 
 CREATE TABLE `consoles` (
-  `id` int NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `consoles`
+-- Gegevens worden geëxporteerd voor tabel `consoles`
 --
 
 INSERT INTO `consoles` (`id`, `name`) VALUES
@@ -81,91 +81,138 @@ INSERT INTO `consoles` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Tabelstructuur voor tabel `products`
 --
 
 CREATE TABLE `products` (
-  `id` int NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `console_id` int NOT NULL,
-  `foto` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `categorie_id` int NOT NULL,
-  `stock` int NOT NULL
+  `console_id` int(11) NOT NULL,
+  `foto` varchar(50) NOT NULL,
+  `categorie_id` int(11) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `aanbevolen` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Gegevens worden geëxporteerd voor tabel `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `console_id`, `foto`, `categorie_id`, `stock`) VALUES
-(2, 'Call of Duty: Black Ops 6', 80.00, 3, 'call_of_duty_bo6.jpg', 1, 10),
-(4, 'Call of Duty: Warzone', 20.00, 3, 'call_of_duty_warzone.jpg', 1, 10),
-(5, 'Farcry', 50.00, 2, 'Farcry.jpg', 1, 10),
-(6, 'R.E.P.O', 19.00, 2, 'repo.jpg', 5, 10),
-(7, 'Peak', 19.00, 2, 'peak.jpg', 3, 10),
-(8, 'Project Zomboid', 30.00, 2, 'project_zomboid.jpg', 5, 10),
-(9, 'MarioKartWorld', 60.00, 4, 'MarioKartWorldjpg.jpg', 3, 10),
-(10, 'mario_odyssey', 60.00, 4, 'mario_odysseyjpg.jpg', 3, 10),
-(11, 'LuigisMansion3', 60.00, 4, 'LuigisMansion3.jpg', 5, 10),
-(12, 'god of war ragnerok', 60.00, 1, 'god-of-war-ragnarok-2.webp', 3, 10),
-(13, 'astrobots', 60.00, 1, 'astrobots.jpg', 3, 10),
-(14, 'Avatar Frontiers of Pandora', 60.00, 1, 'Avatar-Frontiers-of-Pandora.webp', 3, 10);
+INSERT INTO `products` (`id`, `name`, `price`, `console_id`, `foto`, `categorie_id`, `stock`, `aanbevolen`) VALUES
+(2, 'Call of Duty: Black Ops 6', 80.00, 3, 'call_of_duty_bo6.jpg', 1, 10, 0),
+(4, 'Call of Duty: Warzone', 20.00, 3, 'call_of_duty_warzone.jpg', 1, 10, 0),
+(5, 'Farcry', 50.00, 2, 'Farcry.jpg', 1, 10, 1),
+(6, 'R.E.P.O', 19.00, 2, 'repo.jpg', 5, 10, 0),
+(7, 'Peak', 19.00, 2, 'peak.jpg', 3, 10, 0),
+(8, 'Project Zomboid', 30.00, 2, 'project_zomboid.jpg', 5, 10, 0),
+(9, 'MarioKartWorld', 60.00, 4, 'MarioKartWorldjpg.jpg', 3, 10, 0),
+(10, 'mario_odyssey', 60.00, 4, 'mario_odysseyjpg.jpg', 3, 10, 0),
+(12, 'god of war ragnerok', 60.00, 1, 'god-of-war-ragnarok-2.webp', 3, 10, 0),
+(13, 'astrobots', 60.00, 1, 'astrobots.jpg', 3, 10, 0),
+(14, 'Avatar Frontiers of Pandora', 60.00, 1, 'Avatar-Frontiers-of-Pandora.webp', 3, 10, 0),
+(15, 'Luigi\'s Mansion 3', 49.00, 4, 'LuigisMansion3.jpg', 1, 10, 0),
+(16, 'Legend of Zelda: Tears of the Kingdom', 59.99, 4, 'zeldatearsofthekingdom.webp', 3, 10, 0),
+(17, 'Metroid Prime 4 Beyond', 40.00, 4, 'Metroid_Prime_4.webp', 2, 10, 0),
+(18, 'Animal Crossing New Horizons', 60.00, 4, 'AnimalCrossingNewHorizons.jpg', 4, 10, 0),
+(19, 'Forza Horizon 6', 50.00, 3, 'forzahorizon6.jpg', 1, 10, 0),
+(20, 'Cyberpunk', 70.00, 3, 'cyberpunk2077.jpg', 2, 10, 0),
+(21, 'Indiana Jones and The great circle', 58.00, 3, 'inidanajones.jpg', 3, 10, 0),
+(22, 'Red Dead Redemption II', 70.00, 3, 'rdr2.jpg', 2, 10, 0),
+(23, 'Gran Turismo 7', 55.00, 1, 'GT7.webp', 3, 10, 0),
+(24, 'Spider Man 2', 40.00, 1, 'spider-man-2.jpg', 4, 10, 0),
+(25, 'Ghost of Yotei', 50.00, 1, 'ghostofyotei.jpg', 3, 10, 0),
+(26, 'Splatoon 3', 55.00, 4, 'Splatoon_3.jpg', 2, 10, 0),
+(27, 'Super Smash Bros Ultimate', 69.99, 4, 'ssbu.jpg', 1, 10, 0),
+(28, 'Pokemon Legends Arceus', 55.00, 4, 'PokemonLegendsArceus.jpg', 4, 10, 0),
+(29, 'GTA V', 69.99, 1, 'GTAV.jpg', 1, 10, 0),
+(30, 'The Last Of Us Part 1', 50.00, 1, 'TheLastofUs.jpg', 3, 10, 0),
+(31, 'Ratchet & Clank Rift apart', 40.00, 1, 'ratchetclank.jpg', 3, 10, 0),
+(32, 'Resident Evil 2', 60.00, 3, 'resident-evil.jpg', 2, 10, 0),
+(33, 'Fc 25', 45.00, 3, 'fc25.jpg', 1, 10, 0),
+(34, 'Minecraft', 25.00, 3, 'minecraft.jpg', 3, 10, 0),
+(35, 'Hollow Knight', 20.00, 2, 'hollow.jpg', 3, 10, 0),
+(36, 'Beamng.drive', 40.00, 2, 'beamngdrive.jpg', 1, 10, 0),
+(37, 'The Forest', 35.00, 2, 'theforest.jpg', 5, 10, 0),
+(38, 'Rust', 40.00, 2, 'rust.jpg', 1, 10, 0),
+(39, 'Arc Raiders', 30.00, 2, 'arc-raiders.jpg', 2, 10, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reviews`
+-- Tabelstructuur voor tabel `reviews`
 --
 
 CREATE TABLE `reviews` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `product_id` int NOT NULL,
-  `rating` int NOT NULL,
-  `comment` text COLLATE utf8mb4_general_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `user_id`, `product_id`, `rating`, `comment`) VALUES
+(1, 6, 5, 5, 'leuke webshop'),
+(2, 2, 5, 3, 'niet te veel keuze'),
+(3, 7, 5, 4, 'leuke games'),
+(4, 8, 5, 4, 'goed werkende webshop');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabelstructuur voor tabel `users`
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
-  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `is_admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Gegevens worden geëxporteerd voor tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`) VALUES
 (1, 'Admin', '', 'Admin1', 1),
-(2, 'Dion', 'dbreur@gmail.com', '$2y$10$N9xfRd9ZLqhGTOliNyrECOf.21xZbgsZzVgFA7hPJvpK6BrqHRdq6', 0);
+(2, 'Dion', 'dbreur@gmail.com', '$2y$10$N9xfRd9ZLqhGTOliNyrECOf.21xZbgsZzVgFA7hPJvpK6BrqHRdq6', 0),
+(4, 'svenadmin', 'admin@mail.com', '$2y$10$wy.O.cqrWUbDwsragu0AsuG1MNNeoFdVMW1O5P0DqaskzLg5OK.Pu', 1),
+(5, 'adminS', 'admin@mail.comm', '$2y$10$xM/61a6Vvnq8l2mWeVWhZOQvKGp4.z2QCH1VVZ4pZlwxSVtUw4sDq', 0),
+(6, 'keano', '9028451@student.zadkine.nl', '$2y$10$DbSjbfFH.gw.d1aURYRr7OU.zedAxvP9bppfbizQV407y1okLX8Tq', 0),
+(7, 'sven', 'k@k', '$2y$10$R/zkbK4.JIEAyi08v4fvLuzc.WO9DQIk.4Nh43oYr4FRKZ6ybEQ4S', 0),
+(8, 'Dylano', '23@23', '$2y$10$n9nbsTw2flp1E4JQU8lFXeI/obZNo6V8CtNn7YESCUDOxs8Gr0GSG', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- Tabelstructuur voor tabel `wishlist`
 --
 
 CREATE TABLE `wishlist` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `product_id` int NOT NULL
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Gegevens worden geëxporteerd voor tabel `wishlist`
+--
+
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`) VALUES
+(3, 4, 18);
+
+--
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `cart`
+-- Indexen voor tabel `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
@@ -173,19 +220,19 @@ ALTER TABLE `cart`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `categories`
+-- Indexen voor tabel `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `consoles`
+-- Indexen voor tabel `consoles`
 --
 ALTER TABLE `consoles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Indexen voor tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -193,7 +240,7 @@ ALTER TABLE `products`
   ADD KEY `categorie_id` (`categorie_id`);
 
 --
--- Indexes for table `reviews`
+-- Indexen voor tabel `reviews`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`),
@@ -201,13 +248,13 @@ ALTER TABLE `reviews`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `users`
+-- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wishlist`
+-- Indexen voor tabel `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`id`),
@@ -215,78 +262,78 @@ ALTER TABLE `wishlist`
   ADD KEY `product_id` (`product_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT voor een tabel `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT voor een tabel `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `consoles`
+-- AUTO_INCREMENT voor een tabel `consoles`
 --
 ALTER TABLE `consoles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT voor een tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT for table `reviews`
+-- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `wishlist`
+-- AUTO_INCREMENT voor een tabel `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `cart`
+-- Beperkingen voor tabel `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `products`
+-- Beperkingen voor tabel `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`console_id`) REFERENCES `consoles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `reviews`
+-- Beperkingen voor tabel `reviews`
 --
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `wishlist`
+-- Beperkingen voor tabel `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,

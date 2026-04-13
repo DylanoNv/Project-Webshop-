@@ -8,4 +8,6 @@ define("PASSWORD", "");
 
 define("CATTABLE", "categorie");
 define("GAMETABLE", "games");
+
+define("SESSION_TIMEOUT_SECONDS", 1800);
 ?>
