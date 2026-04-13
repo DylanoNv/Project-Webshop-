@@ -439,13 +439,13 @@ function getReviews() {
 }
 
 // Review toevoegen
-function addReview($userId, $review, $rating) {
+function addReview($userId, $review, $rating, $productId = 5) {
     $conn = connectDb();
 
     $sql = "INSERT INTO reviews (user_id, product_id, rating, comment) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
-    return $stmt->execute([$userId, 5, $rating, $review]);
+    return $stmt->execute([$userId, $productId, $rating, $review]);
 }
 
 // Review verwijderen
