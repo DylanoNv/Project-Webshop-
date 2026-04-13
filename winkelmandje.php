@@ -142,7 +142,9 @@ $cartTotal = getCartTotal($userId);
                     <h2>Totaal: €<?php echo number_format($cartTotal, 2, ',', '.'); ?></h2>
                     <div class="cart-actions">
                         <a href="index.php" class="btn btn-continue">Doorgaan met winkelen</a>
-                        <button class="btn btn-checkout" onclick="alert('Checkout functionaliteit komt binnenkort!')">Afrekenen</button>
+                        <form method="POST">
+                            <button type="submit" name="checkout" class="btn btn-checkout">Afrekenen</button>
+                        </form>
                     </div>
                 </div>
             <?php endif; ?>
