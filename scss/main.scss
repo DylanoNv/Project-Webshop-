@@ -51,6 +51,7 @@ header{
         display: block;
         margin-top: 20px;
         margin-right: 10px;
+        width: 80px;
     }
 
     .header-user-menu{
@@ -132,7 +133,7 @@ body.home-page{
         }
 
         .wishlist-img{
-            width: $x-nav-img-size;
+            width: 80px;
             justify-self: end;
         }
     }
@@ -186,7 +187,7 @@ body.playstation-page{
         }
 
         .wishlist-img{
-            width: $x-nav-img-size;
+            width: 80px;
             justify-self: end;
         }
     }
@@ -490,7 +491,7 @@ body.pc-page{
         }
 
         .wishlist-img{
-            width: $x-nav-img-size;
+            width: 80px;
             justify-self: end;
         }
     }
@@ -803,7 +804,7 @@ body.xbox-page{
         }
 
         .wishlist-img{
-            width: $x-nav-img-size;
+            width: 80px;
             justify-self: end;
         }
     }
@@ -1112,6 +1113,11 @@ body.nintendo-page{
 
         .winkelmandje-img{
             width: $x-nav-img-size;
+            justify-self: end;
+        }
+
+        .wishlist-img{
+            width: 80px;
             justify-self: end;
         }
     }

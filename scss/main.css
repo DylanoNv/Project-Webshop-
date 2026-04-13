@@ -38,6 +38,12 @@ header .winkelmandje-img {
   display: block;
   margin-top: 20px;
 }
+header .wishlist-img {
+  display: block;
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 80px;
+}
 header .header-user-menu {
   position: absolute;
   right: 20px;
