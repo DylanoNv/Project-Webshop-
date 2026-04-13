@@ -14,7 +14,7 @@ if (!isLoggedIn()) {
 // Get current user ID
 $userId = getCurrentUserId();
 
-// Handle delete item
+// Handle cart actions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['remove-item'])) {
         $cartId = isset($_POST['cart-id']) ? intval($_POST['cart-id']) : 0;
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: afgerekend.php");
             exit();
         } else {
-            header("Location: winkelmandje.php?status=checkout_empty");
+            header("Location: winkelmandje.php?status=empty_cart");
             exit();
         }
     }
@@ -115,7 +115,7 @@ $cartTotal = getCartTotal($userId);
                             </div>
                             <div class="cart-item-details">
                                 <h3><?php echo htmlspecialchars($item['name']); ?></h3>
-                                <p>Product ID: <?php echo $item['product_id']; ?></p>
+                                <p>Product ID: <?php echo htmlspecialchars($item['product_id']); ?></p>
                             </div>
                             <div class="cart-item-price">
                                 €<?php echo number_format($item['price'], 2, ',', '.'); ?>
