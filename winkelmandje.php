@@ -84,6 +84,12 @@ $cartTotal = getCartTotal($userId);
     <main>
         <div class="cart-container">
             <h1>Mijn Winkelmandje</h1>
+
+            <?php if (isset($_GET['status']) && $_GET['status'] === 'checkout_success'): ?>
+                <p>Bestelling geplaatst! Winkelmand leeg.</p>
+            <?php elseif (isset($_GET['status']) && $_GET['status'] === 'checkout_empty'): ?>
+                <p>Winkelmand is leeg.</p>
+            <?php endif; ?>
             
             <?php if (empty($cartItems)): ?>
                 <div class="cart-empty">
